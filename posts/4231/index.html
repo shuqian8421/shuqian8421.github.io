@@ -1,0 +1,478 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>一文读懂如何进行密码管理（本教程使用Keepass） | 疏堑的博客</title><meta name="author" content="疏堑"><meta name="copyright" content="疏堑"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="使用Keepass对自己的密码进行管理，保证自己账号的安全！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一文读懂如何进行密码管理（本教程使用Keepass）">
+<meta property="og:url" content="https://shuqian8421.github.io/posts/4231/index.html">
+<meta property="og:site_name" content="疏堑的博客">
+<meta property="og:description" content="使用Keepass对自己的密码进行管理，保证自己账号的安全！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://shuqian8421.github.io/img/avatar.png">
+<meta property="article:published_time" content="2024-07-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-28T15:06:03.256Z">
+<meta property="article:author" content="疏堑">
+<meta property="article:tag" content="Keepass">
+<meta property="article:tag" content="密码">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shuqian8421.github.io/img/avatar.png"><link rel="shortcut icon" href="/img/website_favicon.png"><link rel="canonical" href="https://shuqian8421.github.io/posts/4231/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"距离本文章最先进一次更新已有","messageNext":"天，文章内容可能过时。"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 疏堑","link":"链接: ","source":"来源: 疏堑的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '一文读懂如何进行密码管理（本教程使用Keepass）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-02-28 23:06:03'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="/css/equipment.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.0.0"><link rel="alternate" href="/atom.xml" title="疏堑的博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/restaurant/"><i class="fa-fw fas fa-utensils"></i><span> 小饭馆</span></a></div><div class="menus_item"><a class="site-page" href="/equipment/"><i class="fa-fw fas fa-briefcase"></i><span> 装备栏</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="疏堑的博客"><span class="site-name">疏堑的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/restaurant/"><i class="fa-fw fas fa-utensils"></i><span> 小饭馆</span></a></div><div class="menus_item"><a class="site-page" href="/equipment/"><i class="fa-fw fas fa-briefcase"></i><span> 装备栏</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">一文读懂如何进行密码管理（本教程使用Keepass）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-27T16:00:00.000Z" title="发表于 2024-07-28 00:00:00">2024-07-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-02-28T15:06:03.256Z" title="更新于 2026-02-28 23:06:03">2026-02-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%B8%80%E6%96%87%E8%AF%BB%E6%87%82%E7%B3%BB%E5%88%97/">一文读懂系列</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">6.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>19分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="一文读懂如何进行密码管理（本教程使用Keepass）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><div class="tabs" id="head"><ul class="nav-tabs no-default"><button type="button" class="tab " data-href="head-1">动机</button><button type="button" class="tab " data-href="head-2">免责声明</button><button type="button" class="tab " data-href="head-3">参考</button></ul><div class="tab-contents"><div class="tab-item-content" id="head-1"><p>学习通数据库泄露和QQ号被盗的事件影响颇大，这才又让我认识到密码管理的重要性。个人之前一直用的是Keepass管理自己的密码，不过也只用了基本功能，这次正好可以把这个软件深入研究一下。<br>同时这是一文读懂系列的第一个文章，希望以后一文读懂系列能给读者提供一站式的、清晰简洁的讲解教程。</p></div><div class="tab-item-content" id="head-2"><div class="note danger flat"><p>本文所使用的都是开源密码管理工具，虽说安全性强、使用人数多，但我仍没法100%保证软件本身的安全性。因此，我建议各位读者在参考本教程进行密码管理时务必抱着怀疑的态度进行学习，参考该教程而导致的安全问题本人概不负责。</p>
+</div></div><div class="tab-item-content" id="head-3"><div class="btns rounded grid5">
+            <a class="button" target="_blank" rel="noopener" href='https://zhuanlan.zhihu.com/p/463628812' title='密码学和网络安全知识 1： 密码、口令与密钥'><i class='fas fa-book-open'></i>密码学和网络安全知识 1： 密码、口令与密钥</a>
+<a class="button" target="_blank" rel="noopener" href='https://keepass.info/' title='Keepass官方网站'><i class='fas fa-book-open'></i>Keepass官方网站</a>
+<a class="button" target="_blank" rel="noopener" href='https://zhuanlan.zhihu.com/p/39645975' title='一劳永逸：KeePass全网最详使用指南'><i class='fas fa-book-open'></i>一劳永逸：KeePass全网最详使用指南</a>
+<a class="button" target="_blank" rel="noopener" href='https://www.csdn.net/tags/NtTaggxsNDIwMDgtYmxvZwO0O0OO0O0O.html' title='keepass混淆输入'><i class='fas fa-book-open'></i>keepass混淆输入</a>
+<a class="button" target="_blank" rel="noopener" href='https://blog.csdn.net/axutongxue/article/details/118696485' title='5千字长文：KeePass完全入门指南（附已经配置好的版本）'><i class='fas fa-book-open'></i>5千字长文：KeePass完全入门指南（附已经配置好的版本）</a>
+<a class="button" target="_blank" rel="noopener" href='https://www.jianshu.com/p/4ff8b6930372' title='密码管理程序Keepass教程'><i class='fas fa-book-open'></i>密码管理程序Keepass教程</a>
+          </div></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<h1 id="密码基础"><a href="#密码基础" class="headerlink" title="密码基础"></a>密码基础</h1><h2 id="什么是密码"><a href="#什么是密码" class="headerlink" title="什么是密码"></a>什么是密码</h2><p>首先要明确的是，密码学里的“密码”和大众眼中的“密码”是两个概念。这里讲讲口令、密码和密钥。</p>
+<p>口令：password，用于验证鉴别。在大部分互联网应用中会对不同的用户设置不同的身份和口令。如果你告知应用自己的身份，然后再通过告诉应用口令，那就能证明自己的身份。很明显，这里的口令就是我们平常生活中说的“密码”。</p>
+<p>口令有一个基本特征：<strong>由可书写可读的字母、数字、符号、词组成，便于头脑记忆。</strong></p>
+<p>密码：在密码学里指密码算法，我们可以通俗理解成把可以被大家理解的信息转化成大家不理解的杂乱无章的字符之类的信息。密码算法有许多种，这里就不展开了。</p>
+<p>密钥：密码算法可以传入参数，密钥就是这些参数。对于同一种密码算法，传入的密钥参数不同，对应转化的结果也就不同。</p>
+<p>但是，这篇文章是面向大众的科普向文章，博主本人也没密码学相关知识背景，所以我们对这些概念不必过分深究。我们就采用大众理解的概念来理解密码。</p>
+<div class="note info flat"><p>在此段以后的整篇文章中，我们提到的“密码”，若非特别说明，一律指大众理解的密码，也就是登陆时填的那个口令password。</p>
+</div>
+<h2 id="密码设置的注意事项"><a href="#密码设置的注意事项" class="headerlink" title="密码设置的注意事项"></a>密码设置的注意事项</h2><p>密码在使用方便前必须考虑安全性。只有在足够安全的前提下你才能开始考虑怎么方便使用。</p>
+<p><strong>以下是推荐做的事情</strong></p>
+<div class="note info flat"><p>有一些方法挺不错，你可以采用。</p>
+<ol>
+<li>有些人采用分级密码管理方法，比如设置三级密码，第一级密码非常重要，用于管理钱财的软件等APP，所以这个密码很复杂、很关键、很保密，只作为固定几个地方的密码；第二级密码用于官方认证的网站，不涉及金钱交易，比较放心，所以在密码的复杂性、保密性上可以稍微妥协，可以有比较多的网站使用这个密码；第三级密码用于野鸡网站，听都没听过的那种，这时设置的密码就可以很随便了。当然，你也可以用五级密码、七级密码或更多级，前提是你要记得住这些密码。</li>
+<li>大小写结合加数字再加特殊符号更安全哦，而且越长越好。但问题是，对很多人来说，密码越复杂越长，就越倾向于多个地方用同一密码，因为懒得记。既然倾向于多个地方同一个密码，结果风险反而更高了。</li>
+<li>假设有密码<code>123456</code>，那把QQ密码设成<code>QQ123456</code>，Steam密码设成<code>Steam123456</code>。不过这也不太安全。如果你两个密码泄露了，那剩下的不难猜出规律。</li>
+<li>记在小本本上，不过前提是你要保证把小本本放好位置别丢了。 </li>
+<li>一个有名的程序员肯汤普森，他的某个密码散列后的字符串是<code>ZghOT0eRm4U9s</code>，快40年后才被暴力破解，明文是<code>p/q2-q4!</code>，这个明文意思是国际象棋里的一个常见的开局走法：皇后前面的兵向前移动 2 个方格。同样的道理，以下这密码可能给你思路：飞流直下三千尺，疑是银河落九天。密码就是flzx3000c,YSYHL9T.</li>
+<li>你可能不信，但手机验证码是普通人能接触到的最安全的方法了。</li>
+<li>密码管理软件可以生成随机密码，坏处是你根本难以记住，好处是密码管理软件能管理你的密码。</li>
+<li>有一种免费的密码管理软件，可以从庞大的数据中快速找到特定的密码，完全不存在数据泄露的可能性，我们一般称这个软件为大脑。</li>
+</ol>
+</div>
+<p><strong>以下是你禁止做的事情</strong></p>
+<div class="note danger flat"><p><strong>你不能这么做！！！</strong></p>
+<ol>
+<li>所有网站都用同一个密码</li>
+<li>把密码告诉妈妈，跟她说不要告诉别人</li>
+<li>把密码记在一个txt文件里面，然后把名字改成meiyoumima.jpg</li>
+<li>在一个photoshop文件里面建一个新图层，把账号密码写上去，背景和字体设成白色，想看密码的时候开ps文件看。</li>
+<li>密码设成123456</li>
+<li>浏览器问你要不要保存输的密码，你选了要</li>
+<li>你住在北京，你叫小明，你的生日是2月29日，你的密码设成xiaomingbeijing0229</li>
+<li>听别人说MD5是加密算法，然后就糊里糊涂用简单的口令进行MD5转换后当密码</li>
+<li>支持国产！把密码交给百度管理吧！</li>
+</ol>
+</div>
+<h1 id="如何选择密码管理软件"><a href="#如何选择密码管理软件" class="headerlink" title="如何选择密码管理软件"></a>如何选择密码管理软件</h1><p>这时你大概已经明白什么样的密码是好密码，什么样的密码是坏密码了。很多人都在用各种各样的密码管理软件，我也推荐你选择一个。</p>
+<p>在选择密码管理软件之前，你要知道<emp>你自己</emp>对密码管理软件有什么样的要求，这会导致你更喜欢某个或某些管理密码软件。<br><div class="note info flat"><p>先问问自己：</p>
+<ol>
+<li>想选择的加密算法是什么？这个加密算法安全吗？你可能不知道加密算法安不安全，不过至少不要让密码是明文存储的。至于哪种加密算法更安全，各种专业人士自然有各自的见解。</li>
+<li>代码开源吗？可能我们不会拿开源代码去魔改，但是既然它开源那就比较良心，不用担心之后收费之类的问题，开发者夹带私货的概率也大大降低。不过注意，开源不意味着完全安全，只是出问题的概率会低那么一点。</li>
+<li>是离线的软件还是在线的网站？通常来说，我们倾向于认为在线才能用的密码软件或密码网站是有风险的，我们更愿意使用离线的软件来管理密码（除非特殊情况）。</li>
+<li>免费吗？秉持着白嫖不花一分钱的信念，大家确实更喜欢不交钱的东西。不过通常来说付费软件在某些方面可能更好。这个问题见仁见智。</li>
+<li>是否有好用的扩展？在需要密码的时候还要再开软件看一看是很麻烦的行为，所以很多密码管理软件通过扩展达到自动填充的简便效果。你当然可能用浏览器保存密码，不过浏览器自动填充密码和密码管理软件自动填充密码是不一样的，后者更安全。</li>
+<li>麻烦吗？很多小白可能对这些技术不太感兴趣，所以更推荐他们用一些一键安装就完事的软件。不过如果你能找到这篇文章并读到这里，我相信你应该是有一定基础的，所以我们可能不太管上手的难易程度，我们更关心把所有东西都设置好后管理密码方不方便、安不安全。</li>
+<li>用的人多吗？在选择密码管理软件这件事上可不要自命清高，千万不要选择一些冷门的软件。越多人使用，越多人审查代码安全性，越多的扩展，越舒心的体验。</li>
+</ol>
+</div></p>
+<p>想好后，下面这张图可以带你了解目前市面上各大密码管理软件优缺点。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../../img/posts/PasswordManagement/1.jfif" alt="不同密码管理器信息"></p>
+<p>相信不同的读者此时心里已经有了不同的选择。<br>我选择了Keepass。若你和我选择相同，请继续阅读。若你想找其他的密码管理软件，现在就百度/Google吧！</p>
+<p>那么废话不多说，开始我们的Keepass的探索之旅吧！</p>
+<h1 id="Keepass密码管理软件"><a href="#Keepass密码管理软件" class="headerlink" title="Keepass密码管理软件"></a>Keepass密码管理软件</h1><p>最终，来到了我们这篇文章的重头戏。接下来我们会介绍在Windows操作系统、Android移动端设备上如何优雅地使用Keepass来管理密码和使用密码。小提示，普通程序员看懂这篇文章应该没有难度，如果你是电脑小白，可能看懂的话会比较吃力哦！</p>
+<h2 id="Keepass介绍"><a href="#Keepass介绍" class="headerlink" title="Keepass介绍"></a>Keepass介绍</h2><p>或许你可以看看<a target="_blank" rel="noopener" href="https://keepass.info/">Keepass官网</a>是如何介绍自己的。<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Why KeePass?</span><br><span class="line">Today, you have to remember many passwords. You need a password for a lot of websites, your e-mail account, your webserver, network logins, etc. The list is endless. Also, you should use a different password for each account, because if you would use only one password everywhere and someone gets this password, you would have a problem: the thief would have access to all of your accounts.</span><br><span class="line">KeePass is a free open source password manager, which helps you to manage your passwords in a secure way. You can store all your passwords in one database, which is locked with a master key. So you only have to remember one single master key to unlock the whole database. Database files are encrypted using the best and most secure encryption algorithms currently known (AES-256, ChaCha20 and Twofish). For more information, see the features page.</span><br><span class="line"></span><br><span class="line">Is it really free?</span><br><span class="line">Yes, KeePass is really free, and more than that: it is open source (OSI certified). You can have a look at its full source code and check whether the security features are implemented correctly.</span><br></pre></td></tr></table></figure></p>
+<p>看得出来，Keepass有以下特点：</p>
+<ul>
+<li>开源免费</li>
+<li>可以不用手输密码</li>
+<li>作为开源软件当然有大量第三方插件支持</li>
+<li>离线存储、高水平加密算法</li>
+<li>全平台通用</li>
+</ul>
+<p>这篇文章只记录了重要的操作步骤，Keepass还有很多功能，读者可以自行到官网上查阅文档。</p>
+<h2 id="Keepass在Windows端如何使用"><a href="#Keepass在Windows端如何使用" class="headerlink" title="Keepass在Windows端如何使用"></a>Keepass在Windows端如何使用</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><ol>
+<li>在<a target="_blank" rel="noopener" href="https://keepass.info/download.html">Keepass官网下载页</a>里找不同版本release下载。你可以看到有安装程序.exe格式和压缩包.zip格式。.exe格式会让Keepass像正常程序装进你的系统中；.zip格式则都在文件夹内部存储数据，你可以把文件夹搬运到不同设备上，很方便。二选一即可。</li>
+<li>我选择安装程序，运行setup程序。（安装时默认英文）</li>
+<li>第一步Select Setup Language不选，直接点<kbd>OK</kbd>，因为默认不提供中文选项。</li>
+<li>选择安装路径，除非你是大佬，不然别装C盘。</li>
+<li>一路点<kbd>OK</kbd>或<kbd>Next</kbd>。</li>
+</ol>
+<p>至此安装完成，第一次打开会提示“是否自动更新？”要不要自动更新取决于你自己。</p>
+<h3 id="汉化"><a href="#汉化" class="headerlink" title="汉化"></a>汉化</h3><p>怎么设置成中文版呢？</p>
+<ol>
+<li>打开Keepass，依次点击<kbd>View</kbd>-&gt;<kbd>Change Language</kbd>可以选择语言。第一次打开肯定只有英文，点击<kbd>Get More</kbd>能开官方网站，然后下载汉化语言包。</li>
+<li>打开的官方网站中有各种语言，选择<kbd>Chinese, Simp.</kbd>条目对应的Downloads栏，有1.40+和2.51+两个版本，选2.51+的那个。下载后解压得到一个LNGX格式的文件。</li>
+<li>回到原来Select Language界面，刚刚点击的是Get More，现在点击右边的<kbd>Open Folder</kbd>，把刚刚下载的LNGX文件放进我们打开的文件夹里面去。</li>
+<li>再次回到Keepass界面点击<kbd>View</kbd>然后点<kbd>Change Language</kbd>，就能看到中文选项。点击后会要求重启Keepass，选<kbd>是</kbd>进行重启。</li>
+</ol>
+<h3 id="基本使用与第一次配置注意事项"><a href="#基本使用与第一次配置注意事项" class="headerlink" title="基本使用与第一次配置注意事项"></a>基本使用与第一次配置注意事项</h3><ol>
+<li>创建数据库<ul>
+<li>开始行动前，我们先理一理需要创建的东西。Keepass会把你的密码放进一个kdbx文件的数据库里面的。在创建数据库时Keepass提供了3种可任意组合的加密方式：【管理密码】【密钥文件/提供器】和【Windows 用户账户】，至少选一种加密方式，也就是说一共可以组合出<script type="math/tex">C_3^3 +C_3^2 + C_3^1 = 7</script>种不同的加密方式。密钥正如之前我们提到的，是一个文件，也要创建一个新的，如果密码被别人知道了但密钥文件不在别人手上，那么也打不开这个数据库，提高了安全性。如果你是小白，我们推荐【管理密码】+【密钥文件/提供器】加密方式，也就是接下来的内容。</li>
+<li>在Keepass主界面，点击<kbd>文件</kbd>-&gt;<kbd>新建</kbd>，出现新提示窗口，点击<kbd>OK</kbd>，然后选择数据库存放的路径并点<kbd>确定</kbd>。</li>
+<li>在“创建组合管理密码”界面里，把“显示高级选项”点开。这个界面里最上面输入的是主密码，你可以理解成“管理密码的密码”，看得出来非常重要，建议每隔半年就要换一次，另外记得一定要深深地把主密码刻在脑海里面。接下来是设置密钥，你当然可以不设，但我们强力推荐你设置一个密钥文件：【密钥文件/提供器】的选项点开，然后点<kbd>创建</kbd>，然后在“创建密钥文件”界面点<kbd>确定</kbd>。新打开的“收集熵”界面，左边随便按着鼠标拖一拖就好了；右边输入框让你随便输字符，你不用记住你敲了什么键，你输的这些字符是用来当作种子用于高强度加密的，只要乱敲就行<psw>（所以可在这里试看看脸滚键盘）</psw>。接下来点<kbd>确定</kbd>，接着就是要将生成的密钥文件保存在你想保存的路径里面。为了防止密钥文件丢失，你可以做备份。黑客拿到密钥文件时没法读取你任何信息的。现在已经设好了主密码，设置好了密钥文件，就可以点<kbd>确定</kbd>了。</li>
+<li>记住，主密码、密钥文件、数据库不要放在同一个地方，不然你白忙活了！黑客看到数据库的同时发现你把密钥文件放在同一个目录下，那你这密钥设和没设没啥差别。主密码推荐写在一个小纸张上，或如下文所说打印应急表单也行，当然如果你非要记脑子里我也不反对。</li>
+<li>通常来说密钥文件的路径我们是让Keepass自动记住的，也就是说你不移动密钥文件的话我们每次进Keepass只要输主密码就可以。但如果你电脑要借出、或这是公用电脑，那不要让Keepass记得你的密钥路径，你可以在主界面<kbd>工具</kbd>→<kbd>选项</kbd>→<kbd>高级</kbd>的“高级”里关闭<kbd>记住密钥源（密钥文件路径、提供者名称等）</kbd>选项。这个选项默认是选中的。</li>
+<li>接下来进入“配置新数据库”界面。“常规”这一页按需求填写。“安全”这一页，注意【迭代次数】，次数越高数据库越难被暴力破解，但每次打开数据库和保存记录的耗时也越长。默认值为60000。我把它设置为5000000，在我的电脑内大概0.1秒的时间。你也可以点<kbd>1秒延迟</kbd>按钮，对应的次数就是你花1秒成功的大概次数。在“高级”一页，有“建议更换管理密钥天数”，也就是你主密码设置成功过了多少天后会为了安全建议你换另一个主密码，你不换的话就会每次打开Keepass都开弹窗烦你。“强制更换管理密钥天数”就是非让你换主密码不可了。这两个按需求配置，我比较懒所以我都没勾选哈哈。</li>
+<li>创建数据库最后一步就是应急表单了。这个是为了防止哪天你可能就把主密码忘了。推荐打印一份放在你家里或隐蔽的安全的地方。你可能一年的时间都不会碰，但情急时那张纸就是救命稻草。别想着能找回密码，不可能找回的，你忘了那就再也打不开了。所以慎重！！！一定要记得主密码！而且密钥文件放的位置也要记得！<div class="note danger flat"><p>保存好应急表单！主密码一旦忘记无法找回！</p>
+</div></li>
+</ul>
+</li>
+<li>Keepass安全设置<br>Keepass也可能是很不安全的，这并不是因为Keepass设计的不好，而是因为如果你开了这个软件后就跑开了让别人看到你的密码，那只能怪你自己喽。这只是个例子，接下来就教你怎么设置让你能更安全地使用Keepass。<ul>
+<li>密码用了之后就要从剪贴板里清除，电脑长时间没动作时要让Keepass自动锁定。你可以在<kbd>工具</kbd>→<kbd>选项</kbd>→<kbd>安全</kbd>里设置相关选项。<kbd>全局空闲如下时间后锁定主窗口（秒）</kbd><strong>强烈建议</strong>打开，几秒看你需求调；<kbd>剪贴板自动清空时间（秒，主记录列表）</kbd><strong>强烈建议</strong>打开，几秒看你需求调，如果有按下文设置自动输入的话可以调短一点，比如10秒左右之类的。另外常规里的<kbd>锁定Keepass--当锁定Windows或切换用户时</kbd>和<kbd>锁定Keepass--当系统挂起时</kbd>和<kbd>锁定Keepass--当远程控制模式改变时</kbd>这三个选项建议勾起来。</li>
+<li>在<kbd>工具</kbd>→<kbd>选项</kbd>→<kbd>高级</kbd>里，把【启动和退出】里的<kbd>退出和锁定数据库时自动保存</kbd>勾上。同样是在<kbd>高级</kbd>这个页面，把【文件输入/输出连接】里的<kbd>写入数据库时使用文件交换处理（先写入临时文件再替换原文件，以防意外）</kbd>取消勾选。</li>
+<li>防熊孩子和别有用心的人：打开<kbd>工具</kbd>→<kbd>选项</kbd>→<kbd>策略</kbd>，将以下4个选项进行<strong>关闭</strong>：<kbd>导出</kbd>、<kbd>导出-不核对密码</kbd>、<kbd>打印</kbd>、<kbd>打印-不核对密码</kbd>。</li>
+<li>原则上，<strong>严禁</strong>Keepass联网。</li>
+<li>一定要养成随手锁电脑（<kbd>win</kbd>+<kbd>L</kbd>）的习惯！</li>
+</ul>
+</li>
+<li>基本简单操作：如何设置密码、使用密码<br>这应该不用我说了吧</li>
+</ol>
+<h3 id="进阶设置"><a href="#进阶设置" class="headerlink" title="进阶设置"></a>进阶设置</h3><ol>
+<li>为使你的主密码更安全，请在keepass的<kbd>工具</kbd>→<kbd>选项</kbd>→<kbd>安全</kbd>的“高级”中勾选<kbd>在安全桌面输入管理密码</kbd>，因为几乎没有键盘记录软件能在安全桌面工作。</li>
+<li><p>自动输入</p>
+<ul>
+<li>这一步要注意，如果目标应用程序要求管理员权限运行，那么keepass也要用管理员权限运行才能使用自动输入。所以你不妨马上试试右键Keepass图标然后点【以管理员身份运行】。自动输入全局热键默认为<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd>。两种方法使用自动输入：1. 点击输入框→按下自动输入全局热键。2. 点击输入框→切换到Keepass主界面→右键单击记录→<kbd>执行自动输入</kbd>。</li>
+<li>自动输入的匹配规则：当按下自动输入全局热键时，keepass会根据当前活动窗口的标题在数据库中搜索相匹配的记录；如果一条记录的标题或网址包含在活动窗口标题内那么这条记录将被匹配。举个例子：在chrome浏览器中打开淘宝网，当前活动窗口的标题就是“淘宝网 - 淘！我喜欢 - Google Chrome”。那么问题来了：标题为“Google”的记录也会被匹配到，而且在chrome中打开的任何标签页的标题都会包含“Google Chrome”字段。</li>
+<li>为防止误匹配，上述问题解决方法为：依次点击<kbd>工具</kbd>→<kbd>选项</kbd>→<kbd>高级</kbd>，勾选<kbd>总是显示全局自动输入记录选取对话框</kbd>。</li>
+<li>自动输入的键入规则，默认规则为{USERNAME}{TAB}{PASSWORD}{ENTER}。也就是先输入用户名，tab换行，输密码，回车。但这只适用于英文，当我们使用中文输入法时可能失效，所以<strong>推荐使用</strong>以下规则：+{DELAY 100}{CLEARFIELD}{USERNAME}{TAB}{PASSWORD}{ENTER}。解释：按shift键，等100毫秒，清空输入框，输用户名，tab换行，输密码，回车。由于新建记录默认从群组继承输入规则，所以只需修改一次，一劳永逸。</li>
+<li><p>综上，当你遵守以下要求时</p>
+<ul>
+<li>自动输密码前确保输入法是中文</li>
+<li>想要自动输入的密码会在你执行这些配置后添加（也就是说在你配置之前就已经设好的密码没法用自动输入）</li>
+</ul>
+<p>那么你就可以这么配置来一次性保证以后你添加的密码能够使用自动输入：</p>
+<ul>
+<li>在Keepass主界面左侧栏右键你的密码数据库→<kbd>编辑群组</kbd>→<kbd>自动输入</kbd>，选择<kbd>替代默认规则为</kbd>，下面填写<code>+&#123;DELAY 100&#125;&#123;CLEARFIELD&#125;&#123;USERNAME&#125;&#123;TAB&#125;&#123;PASSWORD&#125;&#123;ENTER&#125;</code></li>
+<li>我们在上面提到过的，依次点击<kbd>工具</kbd>→<kbd>选项</kbd>→<kbd>高级</kbd>，勾选<kbd>总是显示全局自动输入记录选取对话框</kbd>。</li>
+<li>以后你想使用自动输入时，就是我们已经讲过的两种方法。1. 点击输入框→按下自动输入全局热键。2. 点击输入框→切换到Keepass主界面→右键单击记录→<kbd>执行自动输入</kbd>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>双通道自动混淆输入<ul>
+<li>原理确实有点让人头大，我把文档贴在这儿吧  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">The Auto-Type feature of KeePass is very powerful: it sends simulated keypresses to other applications. This works with all Windows applications and for the target applications it&#x27;s not possible to distinguish between real keypresses and the ones simulated by Auto-Type. This at the same time is the main disadvantage of Auto-Type, because keyloggers can eavesdrop the simulated keys. That&#x27;s where Two-Channel Auto-Type Obfuscation (TCATO) comes into play.</span><br><span class="line"></span><br><span class="line">TCATO makes standard keyloggers useless. It uses the Windows clipboard to transfer parts of the auto-typed text into the target application. Keyloggers can see the Ctrl+V presses, but do not log the actual contents pasted from the clipboard.</span><br><span class="line"></span><br><span class="line">Clipboard spies don&#x27;t work either, because only parts of the sensitive information is transferred on this way.</span><br><span class="line"></span><br><span class="line">Anyway, it&#x27;s not perfectly secure (and unfortunately cannot be made by theory). None of the currently available keyloggers or clipboard spies can eavesdrop an obfuscated auto-type process, but it is theoretically possible to write a dedicated spy application that specializes on logging obfuscated auto-type.</span><br></pre></td></tr></table></figure>
+  简单来说，将要输入的字符分两部分，用模拟按键和复制粘贴两种方式混合输入，输入完成后再还原输入前的剪贴板内容。这样时为了防止单一的键盘记录软件或剪贴板监听软件窃取输入的完整字段。有些软件不支持这个功能，因此这个功能默认不启用。</li>
+<li>如何使用双通道混淆输入：在添加记录时或编辑记录时，<kbd>自动输入</kbd>子界面有个<kbd>双通道自动输入混淆</kbd>，把它打开。</li>
+</ul>
+</li>
+</ol>
+<h3 id="插件设置"><a href="#插件设置" class="headerlink" title="插件设置"></a>插件设置</h3><p>如何进行插件安装？Keepass主界面点击<kbd>工具</kbd>-&gt;<kbd>插件管理器</kbd>-&gt;<kbd>打开文件夹</kbd>，然后把你想放的plgx文件放进去就行。然后重新打开Keepass。<br><div class="note warning flat"><p>警告！使用非官方的插件可能有风险！如果插件带来了安全问题，你可能无法承受后果！</p>
+</div></p>
+<h2 id="Keepass在Android端如何使用"><a href="#Keepass在Android端如何使用" class="headerlink" title="Keepass在Android端如何使用"></a>Keepass在Android端如何使用</h2><p>没想到吧！Keepass也能在安卓上使用！手机上使用Keepass会简单得多，我们推荐Keepass2Android这个神器！在<a target="_blank" rel="noopener" href="https://keepass.info/download.html">Keepass官网下载页</a>里你就能看到Keepass2Android的下载链接！</p>
+<h2 id="密码数据库文件"><a href="#密码数据库文件" class="headerlink" title="密码数据库文件"></a>密码数据库文件</h2><p>我们现在可能在多个平台都需要密码数据库文件。那么如何做到同步多端数据库文件呢？</p>
+<ol>
+<li>放在云盘。例如Onedrive等等。</li>
+<li>在电脑更新，每隔一段时间就把文件备份到手机上。</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>一文读懂如何进行密码管理（本教程使用Keepass）</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://shuqian8421.github.io/posts/4231/">https://shuqian8421.github.io/posts/4231/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>疏堑</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2024-07-28</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2026-02-28</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Keepass/">Keepass</a><a class="post-meta__tags" href="/tags/%E5%AF%86%E7%A0%81/">密码</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li><li class="reward-item"><a href="https://buymeacoffee.com/shuqian8421" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/BMACQRCode.png" alt="Buy Me a Coffee"/></a><div class="post-qr-code-desc">Buy Me a Coffee</div></li></ul></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">密码基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%86%E7%A0%81"><span class="toc-number">1.1.</span> <span class="toc-text">什么是密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E8%AE%BE%E7%BD%AE%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.2.</span> <span class="toc-text">密码设置的注意事项</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">如何选择密码管理软件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Keepass%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">Keepass密码管理软件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Keepass%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.1.</span> <span class="toc-text">Keepass介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Keepass%E5%9C%A8Windows%E7%AB%AF%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="toc-number">3.2.</span> <span class="toc-text">Keepass在Windows端如何使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-number">3.2.1.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%89%E5%8C%96"><span class="toc-number">3.2.2.</span> <span class="toc-text">汉化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%B8%8E%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%85%8D%E7%BD%AE%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">3.2.3.</span> <span class="toc-text">基本使用与第一次配置注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.2.4.</span> <span class="toc-text">进阶设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.2.5.</span> <span class="toc-text">插件设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Keepass%E5%9C%A8Android%E7%AB%AF%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="toc-number">3.3.</span> <span class="toc-text">Keepass在Android端如何使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B6"><span class="toc-number">3.4.</span> <span class="toc-text">密码数据库文件</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By 疏堑</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://genuine-shortbread-148e4e.netlify.app/.netlify/functions/twikoo',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://genuine-shortbread-148e4e.netlify.app/.netlify/functions/twikoo',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo@1.7.0/dist/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="本博客框架为Hexo" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="本博客主题为Butterfly" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

@@ -1,0 +1,580 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>线性代数笔记 | 疏堑的博客</title><meta name="author" content="疏堑"><meta name="copyright" content="疏堑"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第一章 线性代数中的线性方程组线性方程组线性方程组由一个或多个线性方程组成。例：$2x_1-x_2+1.5x_3&#x3D;8$$\ \ x_1-\ \ \ \ \ \ \ \ \ \ \ \ 4x_3&#x3D;-7$ 线性方程组的解是一组数$(s_1,s_2,···,s_n)$，用这组数分别替代$x_1,x_2,···,x_n$时所有方程的两边相等。 解集：方程组所有可能的解的集合称为线性方程组的解集。 若两个线">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性代数笔记">
+<meta property="og:url" content="https://shuqian8421.github.io/posts/54196/index.html">
+<meta property="og:site_name" content="疏堑的博客">
+<meta property="og:description" content="第一章 线性代数中的线性方程组线性方程组线性方程组由一个或多个线性方程组成。例：$2x_1-x_2+1.5x_3&#x3D;8$$\ \ x_1-\ \ \ \ \ \ \ \ \ \ \ \ 4x_3&#x3D;-7$ 线性方程组的解是一组数$(s_1,s_2,···,s_n)$，用这组数分别替代$x_1,x_2,···,x_n$时所有方程的两边相等。 解集：方程组所有可能的解的集合称为线性方程组的解集。 若两个线">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://shuqian8421.github.io/img/avatar.png">
+<meta property="article:published_time" content="2024-09-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-28T15:06:03.257Z">
+<meta property="article:author" content="疏堑">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shuqian8421.github.io/img/avatar.png"><link rel="shortcut icon" href="/img/website_favicon.png"><link rel="canonical" href="https://shuqian8421.github.io/posts/54196/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"距离本文章最先进一次更新已有","messageNext":"天，文章内容可能过时。"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 疏堑","link":"链接: ","source":"来源: 疏堑的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '线性代数笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-02-28 23:06:03'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="/css/equipment.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.0.0"><link rel="alternate" href="/atom.xml" title="疏堑的博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/restaurant/"><i class="fa-fw fas fa-utensils"></i><span> 小饭馆</span></a></div><div class="menus_item"><a class="site-page" href="/equipment/"><i class="fa-fw fas fa-briefcase"></i><span> 装备栏</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="疏堑的博客"><span class="site-name">疏堑的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/restaurant/"><i class="fa-fw fas fa-utensils"></i><span> 小饭馆</span></a></div><div class="menus_item"><a class="site-page" href="/equipment/"><i class="fa-fw fas fa-briefcase"></i><span> 装备栏</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">线性代数笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-24T16:00:00.000Z" title="发表于 2024-09-25 00:00:00">2024-09-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-02-28T15:06:03.257Z" title="更新于 2026-02-28 23:06:03">2026-02-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>15分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="线性代数笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="第一章-线性代数中的线性方程组"><a href="#第一章-线性代数中的线性方程组" class="headerlink" title="第一章 线性代数中的线性方程组"></a>第一章 线性代数中的线性方程组</h1><h2 id="线性方程组"><a href="#线性方程组" class="headerlink" title="线性方程组"></a>线性方程组</h2><p>线性方程组由一个或多个线性方程组成。例：<br>$2x_1-x_2+1.5x_3=8$<br>$\ \ x_1-\ \ \ \ \ \ \ \ \ \ \ \ 4x_3=-7$</p>
+<p>线性方程组的解是一组数$(s_1,s_2,···,s_n)$，用这组数分别替代$x_1,x_2,···,x_n$时所有方程的两边相等。</p>
+<p>解集：方程组所有可能的解的集合称为线性方程组的解集。</p>
+<p>若两个线性方程组有相同的解集，则称它们为等价的。</p>
+<p>线性方程组的解有以下三种情况：</p>
+<ol>
+<li>无解</li>
+<li>有惟一解</li>
+<li>有无穷多解</li>
+</ol>
+<p>方程组有解，称为方程组相容（consistent）；无解称为不相容（inconsistent）。</p>
+<p>方程组的矩阵形式<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../img/posts/LinearAlgebraNotes/1.1.jpg" alt="方程组的矩阵形式"></p>
+<p>初等行变换：</p>
+<ol>
+<li>（倍加变换）把某一行换成它本身与另一行的倍数的和。</li>
+<li>（对称变换）把两行对换。</li>
+<li>（倍乘变换）把某一行的所有元素乘以同一个非零数。</li>
+</ol>
+<p>一次初等行变换是可逆向进行的。A矩阵经过一次初等行变换到B矩阵，则B矩阵经过一次初等行变换到A矩阵。可以验证多次初等行变换也是可逆向进行的。</p>
+<p>行等价（row equivalent）：两个矩阵称为行等价，如果存在一系列初等行变换使一个矩阵变到另一个矩阵。</p>
+<p>矩阵的行等价是一种等价关系。</p>
+<p>若两个线性方程组的增广矩阵是行等价的，则它们具有相同的解集。</p>
+<p>方程组的基本问题：</p>
+<ol>
+<li>方程组相容吗？</li>
+<li>方程组的解的个数唯一吗？<h2 id="行化简与阶梯型矩阵"><a href="#行化简与阶梯型矩阵" class="headerlink" title="行化简与阶梯型矩阵"></a>行化简与阶梯型矩阵</h2></li>
+</ol>
+<p>非零行的先导元素：左面第一个非零元素</p>
+<p>矩阵如果满足下面三个条件，则称为（行）阶梯型（(row)echelon form）矩阵：</p>
+<ol>
+<li>每一非零行在每一零行之上；</li>
+<li>某一行的先导元素所在的列位于前一行先导元素的右面；</li>
+<li>某一先导元素所在列下方元素都是零。</li>
+</ol>
+<p>若一个阶梯型矩阵还满足以下性质，称它为简化阶梯型（(row)reduced echelon form）矩阵：</p>
+<ol>
+<li>每一非零行的先导元素是1；</li>
+<li>每一先导元素1是该元素所在列的惟一非零元素。</li>
+</ol>
+<p>定理1（简化阶梯型矩阵的惟一性）：<br>每个矩阵行等价于惟一的简化阶梯型矩阵。</p>
+<p>阶梯型的先导元素的位置是固定的，称为主元位置（pivot position）。</p>
+<p>主元位置的非零元素称为主元（pivot）。</p>
+<p>主元位置所在的列称为主元列（pivot column）。</p>
+<p>一个矩阵的行化简得到的阶梯型不一定相同，但主元位置和主元列一定相同。</p>
+<p>基本变量：对应于主元列的变量。</p>
+<p>自由变量：非主元列的变量。</p>
+<p>方程组的通解：所有解的显式表示。</p>
+<p>定理2（存在与惟一性定理）：<br>线性方程组相容的充要条件是增广矩阵的左右列不是主元列，就是说，增广矩阵的阶梯型没有形如<br>$[0\ ··· 0 \ b]\ b\ne 0$<br>的行。若线性方程组相容，它的解集可能有两种情形：（i）当没有自由变量时，有惟一解；（ii）当至少有一个自由变量时，有无穷多解。</p>
+<h2 id="向量方程"><a href="#向量方程" class="headerlink" title="向量方程"></a>向量方程</h2><p>仅含一列的矩阵称为列向量，或简称向量。</p>
+<p>$w=[\begin{matrix}<br>w_1\<br>w_2\<br>\end{matrix}]$</p>
+<p>$w_1$和$w_2$为任意实数。所有两个元素的向量的集记为$R^2$，$R$表示向量中的元素是实数，而指数2表示每个向量包含两个元素。</p>
+<script type="math/tex; mode=display">R_2中两个向量相等，当且仅当对应元素相等。因此，[\begin{matrix}4\\7\end{matrix}]和[\begin{matrix}7\\4\end{matrix}]是不相等的。</script><script type="math/tex; mode=display">[\begin{matrix}1\\-2\end{matrix}]+[\begin{matrix}2\\5\end{matrix}]=[\begin{matrix}1+2\\-2+5\end{matrix}]=[\begin{matrix}3\\3\end{matrix}]</script><script type="math/tex; mode=display">若\mathbb{u}=[\begin{matrix} 3\\1 \end{matrix}],c=5,则c\mathbb{u}=5[\begin{matrix}3\\-1\end{matrix}]=[\begin{matrix}15\\-5\end{matrix}]</script><p>数c称为标量</p>
+<p>$R^n$中向量的代数性质：<br>$对R^n中一切向量\mathbb{u,v,w}以及标量c和d$，  </p>
+<ol>
+<li>$\mathbb{u}+\mathbb{v}=\mathbb{v}+\mathbb{u}$</li>
+<li>$(\mathbb{u}+\mathbb{v})+\mathbb{w}=\mathbb{u}+(\mathbb{v}+\mathbb{w})$</li>
+<li>$\mathbb{u}+\mathbb{0}=\mathbb{0}+\mathbb{u}=\mathbb{u}$</li>
+<li>$\mathbb{u}+(\mathbb{-u})=\mathbb{-u}+\mathbb{u}=\mathbb{0}$</li>
+<li>$c(\mathbb{u}+\mathbb{v})=c\mathbb{u}+c\mathbb{v}$</li>
+<li>$(c+d)\mathbb{u}=c\mathbb{u}+d\mathbb{u}$</li>
+<li>$c(d\mathbb{u})=(cd)(\mathbb{u})$</li>
+<li>$1\mathbb{u}=\mathbb{u}$</li>
+</ol>
+<p>$给定R^n中向量v_1,v_2,···,v_p和标量c_1,c_2,···,c_p$，向量<br>$\mathbb{y}=c_1\mathbb{v_1}+···+c_p\mathbb{v_p}$<br>称为向量$v_1,v_2,···,v_p以c_1,c_2,···,c_p为权的线性组合$。</p>
+<p>定义：<br>若<script type="math/tex">\mathbb{v_1,v_2,···,v_p}</script>是<script type="math/tex">R^n</script>中的向量，则<script type="math/tex">\mathbb{v_1,v_2,···,v_p}</script>的所有线性组合所成的集合用记号<script type="math/tex">Span\{\mathbb{v_1,v_2,···,v_p}\}</script>表示，称为由<script type="math/tex">\mathbb{v_1,v_2,···,v_p}</script>所生成（或张成）的<script type="math/tex">R^n</script>的子集。也就是说，<script type="math/tex">Span\{\mathbb{v_1,v_2,···,v_p}\}</script>是所有形如  </p>
+<script type="math/tex; mode=display">c_1\mathbb{v_1}+c_1\mathbb{v_2}
++···+c_p\mathbb{v_p}</script><p>的向量的集合，其中<script type="math/tex">c_1,c_2,···,c_p</script>为向量。</p>
+<h2 id="矩阵方程-A-mathbb-x-mathbb-b"><a href="#矩阵方程-A-mathbb-x-mathbb-b" class="headerlink" title="矩阵方程$A\mathbb{x}=\mathbb{b}$"></a>矩阵方程$A\mathbb{x}=\mathbb{b}$</h2><p>定义：  </p>
+<script type="math/tex; mode=display">\begin{aligned}A\mathbb{x}
+&=\left[ \begin{matrix}a_1\ a_2\ ···\ a_n\end {matrix} \right] \left[ \begin{matrix}x_1\\ x_2\\ ···\\ x_n\end{matrix} \right] \\
+&=x_1\mathbb{a_1}+x_2\mathbb{a_2}+···+x_n\mathbb{a_n}
+\end{aligned}</script><p>$A\mathbb{x}=\mathbb{b}有解\iff \mathbb{b}是A的列向量的线性组合$</p>
+<p>定理4：<br>$1. 对R^m中每个\mathbb{b}，方程A\mathbb{x}=\mathbb{b}有解。$<br>$2. R^m中的每个\mathbb{b}都是A的列的一个线性组合。$<br>$3. A的各列生成R^m。$<br>$4. A在每一行都有一个主元位置。$</p>
+<p>定理5：  </p>
+<ol>
+<li>$A(\mathbb{u}+\mathbb{v})=A\mathbb{u}+A\mathbb{v}$  </li>
+<li>$A(c\mathbb{u}=c(A\mathbb{u}))$</li>
+</ol>
+<h2 id="线性方程组的解集"><a href="#线性方程组的解集" class="headerlink" title="线性方程组的解集"></a>线性方程组的解集</h2><p>齐次线性方程组（Homogenous Linear System）：$A\mathbb{x}=\mathbb{0}$</p>
+<p>平凡解（trivial solution）：$\mathbb{x}=\mathbb{0}$</p>
+<p>非平凡解（nontrivial solution）：非0解</p>
+<p>有非平凡解$\iff$有自由变量</p>
+<p>齐次方程组的解的结构：几个向量张成的空间，$span{v_1,v_2,···,v_p}$。</p>
+<p>定理6：$如果A\mathbb{x}=\mathbb{b}有解，设\mathbb{p}是一个特解，通解结构：\mathbb{p}+(A\mathbb{x}=0的通解)$</p>
+<p>如果$A\mathbb{x}=0$只有0解，则$A\mathbb{x}=\mathbb{b}$只有一个特解。</p>
+<p>将非齐次线性方程组右端的常数换为零，得到的齐次线性方程组称为该非齐次线性方程组的导出组。</p>
+<h2 id="线性无关"><a href="#线性无关" class="headerlink" title="线性无关"></a>线性无关</h2><p>对于$R^n$的一系列向量${v_1,v_2,···,v_p}$，若满足<br>$x_1v_1+x_2v_2+···+x_pv_p=0$<br>有惟一的平凡解，则这组向量是线性无关的。</p>
+<p>如果有0向量，则线性相关</p>
+<h2 id="线性变换介绍"><a href="#线性变换介绍" class="headerlink" title="线性变换介绍"></a>线性变换介绍</h2><p>$Ax=b$</p>
+<p>$x_1a_1+x_2a_2+···+x_na_n=b$</p>
+<p>Ax写法强调了A作用到x的变化</p>
+<p>线性变换：一个变换T是线性的需要满足：<br>$对于定义域内所有的向量u和v，有T(u+v)=T(u)+T(v)$<br>$对于任意向量u和任意参数c，有T(cu)=cT(u)$</p>
+<p>矩阵变换是线性变换</p>
+<p>线性变换的性质：  </p>
+<ol>
+<li><script type="math/tex; mode=display">T(0)=0</script></li>
+<li><script type="math/tex; mode=display">T(cu+dv)=cT(u)+dT(v)</script></li>
+</ol>
+<h2 id="线性变换的矩阵"><a href="#线性变换的矩阵" class="headerlink" title="线性变换的矩阵"></a>线性变换的矩阵</h2><p>线性变换的标准矩阵是唯一的。</p>
+<p>映上：<script type="math/tex">R^m中的每个b向量是至少一个R^n中x向量的像，则变换T:R^n→R^m是映上R^m的。</script></p>
+<p>一对一：$R^m中的每个b向量是至多一个R^n中x向量的像，则变换T:R^n→R^m是一对一的。$</p>
+<p>定理11：$T:R^n→R^m是线性变换。那么，T是单射\iff T(x)=0只有平凡解$</p>
+<p>定理12：$T:R^n→R^m是线性变换，A是T的标准矩阵，那么$<br>$T是满射\iff A的列向量张成R^m$<br>$T是单射\iff A的列向量线性无关$</p>
+<h1 id="第二章-矩阵代数"><a href="#第二章-矩阵代数" class="headerlink" title="第二章 矩阵代数"></a>第二章 矩阵代数</h1><h2 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h2><p>定理1：  </p>
+<ol>
+<li>A+B=B+A</li>
+<li>(A+B)+C=A+(B+C)</li>
+<li>A+0=A</li>
+<li>r(A+B)=rA+rB</li>
+<li>(r+s)A=rA+sA</li>
+<li>r(sA)=(rs)A</li>
+</ol>
+<p>一般情况下，$AB\ne BA$</p>
+<p>若$AB=AC$，一般情况下，B=C不一定成立。</p>
+<p>定理3：  </p>
+<ol>
+<li>$(A^T)^T=A$</li>
+<li>$(A+B)^T=A^T+B^T$</li>
+<li>$任意数r，(rA)^T=rA^T$</li>
+<li>$(AB)^T=B^TA^T$</li>
+</ol>
+<h2 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h2><p>对于n×n矩阵A，若有一个n×n矩阵C满足$CA=AC=I_n$，则A是可逆的。C是A的逆矩阵。</p>
+<p>逆矩阵有唯一性。</p>
+<p>不可逆的矩阵叫奇异矩阵，可逆矩阵叫非奇异矩阵。</p>
+<p>定理5：$若A是n×n矩阵，则R^n中的每个向量b，Ax=b有唯一解x=A^{-1}b$</p>
+<p>定理6：  </p>
+<ol>
+<li>$(A^{-1})^{-1}=A$</li>
+<li>$(AB)^{-1}=B^{-1}A^{-1}$</li>
+<li>$(A^T)^{-1}=(A^{-1})^T$</li>
+</ol>
+<p>对单位矩阵进行一次初等行变换，得到初等矩阵。</p>
+<p>初等矩阵E左乘一个矩阵A，EA $\iff$ 对A进行对应的初等行变换。</p>
+<p>初等矩阵E是可逆的。</p>
+<p>定理7：$n\times n矩阵可逆 \iff A行等价于I$</p>
+<h2 id="可逆矩阵的特征"><a href="#可逆矩阵的特征" class="headerlink" title="可逆矩阵的特征"></a>可逆矩阵的特征</h2><p>定理8（可逆矩阵定理）：</p>
+<ol>
+<li>A是可逆矩阵。</li>
+<li>$A等价于n \times n单位矩阵。$</li>
+<li>A有n个主元位置。</li>
+<li>方程Ax=0仅有平凡解。</li>
+<li>A的各列线性无关。</li>
+<li>线性变换$x|→Ax$是一对一的。</li>
+<li>$对R^n中的任意b，Ax=b至少有一个解。$</li>
+<li>$A的各列生成R^n$</li>
+<li>$线性变换x|→Ax把R^n映上到R^n上。$</li>
+<li>$存在n \times n的矩阵C使CA=I$</li>
+<li>$存在n \times n的矩阵使AD=I$</li>
+<li>$A^T是可逆矩阵$</li>
+</ol>
+<h2 id="分块矩阵"><a href="#分块矩阵" class="headerlink" title="分块矩阵"></a>分块矩阵</h2><p>定理10：若A是m×n矩阵，B是n×p<br>矩阵，则<br>$AB=[col_1(A)\ col_2(A)\ ··· col_n(A)] \left[ \begin{matrix} row_1(B)\<br>row_2(B)\<br>···\<br>row_n(B)<br>\end{matrix} \right]$</p>
+<h2 id="矩阵因式分解"><a href="#矩阵因式分解" class="headerlink" title="矩阵因式分解"></a>矩阵因式分解</h2><p>LU分解</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../img/posts/LinearAlgebraNotes/2.1.jpg" alt="例"></p>
+<h1 id="第三章-行列式"><a href="#第三章-行列式" class="headerlink" title="第三章 行列式"></a>第三章 行列式</h1><h2 id="行列式介绍"><a href="#行列式介绍" class="headerlink" title="行列式介绍"></a>行列式介绍</h2><p>矩阵A的行列式记为detA</p>
+<p>去掉第i行第j列所在的行和列，得到的子矩阵$A<em>{ij}$，叫A的子行列式（也叫余子式）。$C</em>{ij}=(-1)^{i+j}detA_{ij}$是A的代数余子式。</p>
+<p>定理1：$det A = a<em>{i1}C</em>{i1}+a<em>{i2}C</em>{i2}+···+a<em>{in}C</em>{in}$</p>
+<p>定理2：三角矩阵的行列式等于主对角线上元素的乘积。</p>
+<h2 id="行列式的性质"><a href="#行列式的性质" class="headerlink" title="行列式的性质"></a>行列式的性质</h2><p>定理3 设A是一个方阵，则：  </p>
+<ol>
+<li>矩阵A的一行的乘积加到另一行得到矩阵B，detA=detB.</li>
+<li>矩阵A的两行交换得到矩阵B，则detB=-detA.</li>
+<li>矩阵A的一行乘k得到矩阵B，则detB=k·detA.</li>
+</ol>
+<p>定理4：$方阵A可逆\iff detA \ne 0$</p>
+<p>定理5：$若A是一个n \times n矩阵，则detA^T=detA$</p>
+<p>定理6：若A、B是一个n×n矩阵，则detAB=(detA)(detB)</p>
+<h2 id="克拉默法则、体积和线性变换"><a href="#克拉默法则、体积和线性变换" class="headerlink" title="克拉默法则、体积和线性变换"></a>克拉默法则、体积和线性变换</h2><p>对于方程组Ax=b，记：$A_i(b)=[a_1 ··· b ··· a_n]$</p>
+<p>定理7（Cramer法则）：A是可逆的n×n矩阵，Ax=b的惟一解是$x_i=\frac{detA_i(b)}{detA}$</p>
+<p>定理8（逆矩阵公式）：设A是一个可逆的n×n矩阵则$A^{-1}=\frac{1}{detA}adjA$<br>其中<script type="math/tex">adjA=\left[ \begin{matrix}C_{11} & C_{21} & ··· & C_{n1}\\
+C_{12} & C_{22} & ··· & C_{n2}\\
+··· & ··· & ··· & ···\\
+C_{1n} & C_{2n} & ··· & C_{nn}\end{matrix}\right]</script></p>
+<h1 id="第四章-向量空间"><a href="#第四章-向量空间" class="headerlink" title="第四章 向量空间"></a>第四章 向量空间</h1><h2 id="向量空间与子空间"><a href="#向量空间与子空间" class="headerlink" title="向量空间与子空间"></a>向量空间与子空间</h2><p>向量空间V的子空间是V的一个子集H且满足：  </p>
+<ol>
+<li>V中的零向量在H中。</li>
+<li>H内的任意的u、v两向量，u+v也在H内。</li>
+<li>H内的任意向量u和任意数c，cu在H内。</li>
+</ol>
+<p>只有0向量的空间是任何向量空间的子空间，称为0空间，写作{0}</p>
+<p>$R^2不是R^3的子空间，因为R^2不是R^3的子集$</p>
+<p>称<script type="math/tex">\mathrm{Span} \{v_1,v_2,···,v_p\}为\{v_1,···,v_p\}</script>张成的子空间</p>
+<h2 id="零空间、列空间和线性变换"><a href="#零空间、列空间和线性变换" class="headerlink" title="零空间、列空间和线性变换"></a>零空间、列空间和线性变换</h2><p>满足Ax=0的所有x的集合为矩阵A的零空间</p>
+<p>m×n矩阵A的列空间ColA是A列向量所有线性组合的集合。</p>
+<p>定理3：m×n矩阵A的列空间是$R^m$的子空间</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../img/posts/LinearAlgebraNotes/2.2.jpg" alt=""></p>
+<p>线性变换的核是V中满足T(u)=0的所有向量u的集合。</p>
+<h2 id="线性无关集和基"><a href="#线性无关集和基" class="headerlink" title="线性无关集和基"></a>线性无关集和基</h2><p>设H是向量空间V的一个子空间，V中的向量集$B={b_1,b_2,···,b_p}$称为H的一组基，如果：<br>(i)B是线性无关集<br>(ii)B生成H，即$H=Span{b_1,···,b_p}$</p>
+<p>矩阵的行初等变换不改变列向量的相关性</p>
+<p>定理6：矩阵A的主元列是colA的一组基。</p>
+<h2 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h2><p>令$B={b_1,b_2,···,b_n}$是向量空间V的一组基，则对于V中的任一向量x，存在唯一一组标量$c_1,···,c_n$使得$x=c_1b_1+···+c_nb_n$</p>
+<p>坐标映射是一一对应线性变换</p>
+<h2 id="向量空间的维数"><a href="#向量空间的维数" class="headerlink" title="向量空间的维数"></a>向量空间的维数</h2><p>如果向量空间V有一组基$B={b_1,···,b_n}$，那么V中任何多于n个的向量集合一定是线性相关的。</p>
+<p>定理10：如果向量空间V有一组基有n个向量，那么它的每一组基都有n个向量。</p>
+<p>NulA的维数是自由变量的个数，ColA的维数是主元列的个数。自由变量的个数+主元列的个数=A的列数</p>
+<h2 id="秩"><a href="#秩" class="headerlink" title="秩"></a>秩</h2><p>A的行向量生成的空间称为行空间，记为rowA。</p>
+<p>$colA^T$和rowA是相同的空间</p>
+<p>行化简改变行向量之间的线性相关性，但不改变行空间的维数，不改变行空间；行化简不改变列向量之间的线性相关性，不改变列空间的维数，但改变列空间。</p>
+<p>定理13：两个矩阵A、B行等价，则行空间相同，如果B矩阵式阶梯型，则其非零行向量就是行空间的基。</p>
+<p>行空间和列空间的维数相等，称为矩阵A的秩。</p>
+<p>m×n矩阵A：rankA+dimNulA=n</p>
+<p>可逆矩阵定理（续2.3节）</p>
+<ol>
+<li>A的列构成$R^n$的一个基</li>
+<li>$ColA=R^n$</li>
+<li>dimColA=n<br>16.rankA=n</li>
+<li>NulA={0}</li>
+<li>dim NulA=0</li>
+</ol>
+<h2 id="基的变换"><a href="#基的变换" class="headerlink" title="基的变换"></a>基的变换</h2><p>$设B={b_1,···,b_n}和C={c_1,···,c_n}是向量空间V的基，则存在一个n \times n的矩阵\underset{C←B}{P}使[x]_C=\underset{C←B}{P}[x]_B$<br>$\underset{C←B}{P}$称为B到C的坐标变换矩阵。</p>
+<p>定理15：坐标变换矩阵的列向量使线性无关的<br>于是成立<script type="math/tex">\big(\underset{C←B}{P}\big)^{-1}[x]_C=[x]_B</script> <script type="math/tex">\big(\underset{C←B}{P}\big)^{-1}=\underset{B←C}{P}</script></p>
+<h1 id="第五章-特征值与特征向量"><a href="#第五章-特征值与特征向量" class="headerlink" title="第五章 特征值与特征向量"></a>第五章 特征值与特征向量</h1><h2 id="特征向量与特征值"><a href="#特征向量与特征值" class="headerlink" title="特征向量与特征值"></a>特征向量与特征值</h2><p>对于n×n的矩阵A，如果存在x（≠0）满足：Ax=λx（λ为标量），则称x为特征向量，λ称为该特征向量的特征值。</p>
+<p>特征向量一定≠0，特征值可以是0</p>
+<p>对于一个特征值λ，方程组的零空间称为λ的特征空间。特征空间中的向量都是λ的特征向量（0除外）</p>
+<p>定理1：三角形矩阵的特征值是对角线的元素</p>
+<h2 id="特征方程"><a href="#特征方程" class="headerlink" title="特征方程"></a>特征方程</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../img/posts/LinearAlgebraNotes/5.1.jpg" alt=""></p>
+<p>det(A-λI)=0称为特征方程</p>
+<p>det(A-λI)称为特征多项式</p>
+<p>n×n矩阵A和B，如果存在矩阵P，使得$A=PBP^{-1}$，则称A相似于B。</p>
+<p>A相似于B，则B相似于A。称为A和B相似。</p>
+<p>定理4：如果n×n矩阵A和B相似，则有相同的特征值（重数也相同）。</p>
+<p>相似不改变特征值，行等价改变特征值</p>
+<p>相似不改变行列式的值，行等价改变行列式的值。</p>
+<p>相似和行等价都是等价关系，都不改变维数、秩。</p>
+<h2 id="对角化"><a href="#对角化" class="headerlink" title="对角化"></a>对角化</h2><p>$A=PDP^{-1}$，其中D是对角线矩阵</p>
+<p>如果存在矩阵P和D，使得$A=PDP^{-1}$，则称A可对角化</p>
+<p>定理5：n×n矩阵A可对角化$\iff$ A有n个线性无关的特征向量。</p>
+<p>可对角化条件：存在矩阵P和D，使得$A=PDP{-1}$，此时P的各列都是A的特征向量，D的对角线元素是A的特征值。</p>
+<p>定理6：n×n矩阵如果有n不同的特征值，则可对角化。</p>
+<h1 id="第六章-正交性和最小二乘法"><a href="#第六章-正交性和最小二乘法" class="headerlink" title="第六章 正交性和最小二乘法"></a>第六章 正交性和最小二乘法</h1><h2 id="内积、长度与正交性"><a href="#内积、长度与正交性" class="headerlink" title="内积、长度与正交性"></a>内积、长度与正交性</h2><p>$u^Tv$称作u和v的内积，记为u·v，也成为点积。</p>
+<p>$u·v=v·u$</p>
+<p>定理1：u，v，w是$R^n$中的向量，c是常数。则  </p>
+<ol>
+<li>$u · v = v · u$</li>
+<li>$(u + v) · w = u · w + v · w$</li>
+<li>$(cu)·v=c(u·v)=u·(cv)$</li>
+<li>$u·u\ge 0 且u·u=0\iff u=0$</li>
+</ol>
+<p>$R^n$中的两个向量u、v如果u·v=0则成为互相垂直（正交）。</p>
+<p>0向量与所有向量正交。</p>
+<h2 id="正交集"><a href="#正交集" class="headerlink" title="正交集"></a>正交集</h2><p>$R^n中的几个向量{u_1,···,u_p}，如果任两个不同向量都正交，则称为正交向量集。$</p>
+<h2 id="格拉姆-施密特方法"><a href="#格拉姆-施密特方法" class="headerlink" title="格拉姆-施密特方法"></a>格拉姆-施密特方法</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../img/posts/LinearAlgebraNotes/6.1.jpg" alt=""></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../img/posts/LinearAlgebraNotes/6.2.jpg" alt=""></p>
+<h2 id="最小二乘问题"><a href="#最小二乘问题" class="headerlink" title="最小二乘问题"></a>最小二乘问题</h2><p>$A^TAx=A^Tb$</p>
+<p>定理14：$A^TA可逆\iff A的列向量线性无关$</p>
+<h1 id="第七章-对称矩阵和二次型"><a href="#第七章-对称矩阵和二次型" class="headerlink" title="第七章 对称矩阵和二次型"></a>第七章 对称矩阵和二次型</h1><h2 id="对称矩阵的对角化"><a href="#对称矩阵的对角化" class="headerlink" title="对称矩阵的对角化"></a>对称矩阵的对角化</h2><p>满足$A^T=A的矩阵A是对称矩阵$</p>
+<p>对称矩阵一定是方阵</p>
+<p>可正交对角化：$A=PDP^T=PDP^{-1}$ 一定是对称矩阵</p>
+<p>定理2：一个n×n矩阵可正交对角化$\iff$ A是对角矩阵</p>
+<h2 id="二次型"><a href="#二次型" class="headerlink" title="二次型"></a>二次型</h2><p>二次型是二次函数$Q(x)=x^TAX$其中A是n×n对称矩阵，称为二次型的矩阵。</p>
+<p>二次型可通过变量代换去掉交叉乘积项。</p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>线性代数笔记</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://shuqian8421.github.io/posts/54196/">https://shuqian8421.github.io/posts/54196/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>疏堑</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2024-09-25</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2026-02-28</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li><li class="reward-item"><a href="https://buymeacoffee.com/shuqian8421" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/BMACQRCode.png" alt="Buy Me a Coffee"/></a><div class="post-qr-code-desc">Buy Me a Coffee</div></li></ul></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="toc-number">1.</span> <span class="toc-text">第一章 线性代数中的线性方程组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="toc-number">1.1.</span> <span class="toc-text">线性方程组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%8C%96%E7%AE%80%E4%B8%8E%E9%98%B6%E6%A2%AF%E5%9E%8B%E7%9F%A9%E9%98%B5"><span class="toc-number">1.2.</span> <span class="toc-text">行化简与阶梯型矩阵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E6%96%B9%E7%A8%8B"><span class="toc-number">1.3.</span> <span class="toc-text">向量方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E6%96%B9%E7%A8%8B-A-mathbb-x-mathbb-b"><span class="toc-number">1.4.</span> <span class="toc-text">矩阵方程$A\mathbb{x}&#x3D;\mathbb{b}$</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E8%A7%A3%E9%9B%86"><span class="toc-number">1.5.</span> <span class="toc-text">线性方程组的解集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%97%A0%E5%85%B3"><span class="toc-number">1.6.</span> <span class="toc-text">线性无关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.7.</span> <span class="toc-text">线性变换介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E7%9A%84%E7%9F%A9%E9%98%B5"><span class="toc-number">1.8.</span> <span class="toc-text">线性变换的矩阵</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%9F%A9%E9%98%B5%E4%BB%A3%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">第二章 矩阵代数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97"><span class="toc-number">2.1.</span> <span class="toc-text">矩阵运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%86"><span class="toc-number">2.2.</span> <span class="toc-text">矩阵的逆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E9%80%86%E7%9F%A9%E9%98%B5%E7%9A%84%E7%89%B9%E5%BE%81"><span class="toc-number">2.3.</span> <span class="toc-text">可逆矩阵的特征</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%9D%97%E7%9F%A9%E9%98%B5"><span class="toc-number">2.4.</span> <span class="toc-text">分块矩阵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E5%9B%A0%E5%BC%8F%E5%88%86%E8%A7%A3"><span class="toc-number">2.5.</span> <span class="toc-text">矩阵因式分解</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">第三章 行列式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.1.</span> <span class="toc-text">行列式介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">3.2.</span> <span class="toc-text">行列式的性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%8B%E6%8B%89%E9%BB%98%E6%B3%95%E5%88%99%E3%80%81%E4%BD%93%E7%A7%AF%E5%92%8C%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="toc-number">3.3.</span> <span class="toc-text">克拉默法则、体积和线性变换</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4"><span class="toc-number">4.</span> <span class="toc-text">第四章 向量空间</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E4%B8%8E%E5%AD%90%E7%A9%BA%E9%97%B4"><span class="toc-number">4.1.</span> <span class="toc-text">向量空间与子空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%B6%E7%A9%BA%E9%97%B4%E3%80%81%E5%88%97%E7%A9%BA%E9%97%B4%E5%92%8C%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="toc-number">4.2.</span> <span class="toc-text">零空间、列空间和线性变换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%97%A0%E5%85%B3%E9%9B%86%E5%92%8C%E5%9F%BA"><span class="toc-number">4.3.</span> <span class="toc-text">线性无关集和基</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">4.4.</span> <span class="toc-text">坐标系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E7%9A%84%E7%BB%B4%E6%95%B0"><span class="toc-number">4.5.</span> <span class="toc-text">向量空间的维数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%A9"><span class="toc-number">4.6.</span> <span class="toc-text">秩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%9A%84%E5%8F%98%E6%8D%A2"><span class="toc-number">4.7.</span> <span class="toc-text">基的变换</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="toc-number">5.</span> <span class="toc-text">第五章 特征值与特征向量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E4%B8%8E%E7%89%B9%E5%BE%81%E5%80%BC"><span class="toc-number">5.1.</span> <span class="toc-text">特征向量与特征值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E6%96%B9%E7%A8%8B"><span class="toc-number">5.2.</span> <span class="toc-text">特征方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%A7%92%E5%8C%96"><span class="toc-number">5.3.</span> <span class="toc-text">对角化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%AD%A3%E4%BA%A4%E6%80%A7%E5%92%8C%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95"><span class="toc-number">6.</span> <span class="toc-text">第六章 正交性和最小二乘法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E7%A7%AF%E3%80%81%E9%95%BF%E5%BA%A6%E4%B8%8E%E6%AD%A3%E4%BA%A4%E6%80%A7"><span class="toc-number">6.1.</span> <span class="toc-text">内积、长度与正交性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E9%9B%86"><span class="toc-number">6.2.</span> <span class="toc-text">正交集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%BC%E6%8B%89%E5%A7%86-%E6%96%BD%E5%AF%86%E7%89%B9%E6%96%B9%E6%B3%95"><span class="toc-number">6.3.</span> <span class="toc-text">格拉姆-施密特方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E9%97%AE%E9%A2%98"><span class="toc-number">6.4.</span> <span class="toc-text">最小二乘问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5%E5%92%8C%E4%BA%8C%E6%AC%A1%E5%9E%8B"><span class="toc-number">7.</span> <span class="toc-text">第七章 对称矩阵和二次型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5%E7%9A%84%E5%AF%B9%E8%A7%92%E5%8C%96"><span class="toc-number">7.1.</span> <span class="toc-text">对称矩阵的对角化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E6%AC%A1%E5%9E%8B"><span class="toc-number">7.2.</span> <span class="toc-text">二次型</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By 疏堑</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://genuine-shortbread-148e4e.netlify.app/.netlify/functions/twikoo',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://genuine-shortbread-148e4e.netlify.app/.netlify/functions/twikoo',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo@1.7.0/dist/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="本博客框架为Hexo" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="本博客主题为Butterfly" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>一文读懂LaTeX安装（使用TeX Live+Visual Studio Code插件） | 疏堑的博客</title><meta name="author" content="疏堑"><meta name="copyright" content="疏堑"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="LaTeX的介绍、安装和基本使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一文读懂LaTeX安装（使用TeX Live+Visual Studio Code插件）">
+<meta property="og:url" content="https://shuqian8421.github.io/posts/50991/index.html">
+<meta property="og:site_name" content="疏堑的博客">
+<meta property="og:description" content="LaTeX的介绍、安装和基本使用">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://shuqian8421.github.io/img/avatar.png">
+<meta property="article:published_time" content="2024-08-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-28T15:06:03.256Z">
+<meta property="article:author" content="疏堑">
+<meta property="article:tag" content="LaTeX">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shuqian8421.github.io/img/avatar.png"><link rel="shortcut icon" href="/img/website_favicon.png"><link rel="canonical" href="https://shuqian8421.github.io/posts/50991/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"距离本文章最先进一次更新已有","messageNext":"天，文章内容可能过时。"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 疏堑","link":"链接: ","source":"来源: 疏堑的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '一文读懂LaTeX安装（使用TeX Live+Visual Studio Code插件）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-02-28 23:06:03'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="/css/equipment.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.0.0"><link rel="alternate" href="/atom.xml" title="疏堑的博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/restaurant/"><i class="fa-fw fas fa-utensils"></i><span> 小饭馆</span></a></div><div class="menus_item"><a class="site-page" href="/equipment/"><i class="fa-fw fas fa-briefcase"></i><span> 装备栏</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="疏堑的博客"><span class="site-name">疏堑的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/restaurant/"><i class="fa-fw fas fa-utensils"></i><span> 小饭馆</span></a></div><div class="menus_item"><a class="site-page" href="/equipment/"><i class="fa-fw fas fa-briefcase"></i><span> 装备栏</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">一文读懂LaTeX安装（使用TeX Live+Visual Studio Code插件）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-11T16:00:00.000Z" title="发表于 2024-08-12 00:00:00">2024-08-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-02-28T15:06:03.256Z" title="更新于 2026-02-28 23:06:03">2026-02-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%B8%80%E6%96%87%E8%AF%BB%E6%87%82%E7%B3%BB%E5%88%97/">一文读懂系列</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="一文读懂LaTeX安装（使用TeX Live+Visual Studio Code插件）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><div class="tabs" id="head"><ul class="nav-tabs no-default"><button type="button" class="tab " data-href="head-1">动机</button><button type="button" class="tab " data-href="head-2">参考</button></ul><div class="tab-contents"><div class="tab-item-content" id="head-1"><p>之前一直用的MiKTeX+TexMaker组合，后来发现MiKTeX在linux下居然不顶用。本着能适配多平台就适配多平台的原则，怎么说平台也要多多益善，更何况还听说MiKTex有时候包更新不及时呢。</p></div><div class="tab-item-content" id="head-2"><div class="btns rounded grid5">
+            <a class="button" target="_blank" rel="noopener" href='https://zhuanlan.zhihu.com/p/693688337' title='LaTex 安装和使用'><i class='fas fa-book-open'></i>LaTex 安装和使用</a>
+          </div></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<div class="note info flat"><p>这篇文章适用于帮助LaTeX新人快速上手安装和使用，不会对LaTeX的工作流程做深入的研究。</p>
+</div>
+<h1 id="LaTeX简介"><a href="#LaTeX简介" class="headerlink" title="LaTeX简介"></a>LaTeX简介</h1><h2 id="介绍LaTeX"><a href="#介绍LaTeX" class="headerlink" title="介绍LaTeX"></a>介绍LaTeX</h2><p>LaTeX是一种排版系统，适用于排版印刷品。对于个人而言，LaTeX很适合用于编写笔记、含有数学公式和图表的论文、幻灯片等等。</p>
+<p>LaTeX在不同的硬件和操作系统上有不同的实现版本，比如Tex Live、MikTeX等。通常来说，这些实现版本都会自带前端的编辑器，但是比较简陋。所以对于对编写界面颇有美观实用要求的很多人，都选择另外安装好看实用的前端工具软件，比如Visual Studio Code(LaTeX Workshop插件)、TexMaker等等。</p>
+<h2 id="选择合适的软件"><a href="#选择合适的软件" class="headerlink" title="选择合适的软件"></a>选择合适的软件</h2><p>看得出来，实现版本和前端界面有不同的组合。每个软件各有优劣，长久以来大家对于“使用LaTeX该用哪些软件最好”的议题莫衷一是。本教程提出一些常见软件的优缺点，读者可根据自身需求进行判断或参阅其他教程。</p>
+<h3 id="LaTeX实现版本"><a href="#LaTeX实现版本" class="headerlink" title="LaTeX实现版本"></a>LaTeX实现版本</h3><p>我们安装LaTeX实现版本的目的是能够把我们编写的LaTeX指令文本最终编译成pdf文档。</p>
+<ol>
+<li>TeX Live<ul>
+<li>优点：<ul>
+<li>由TeX User Group维护，官方可靠有保障</li>
+<li>适配Windows和Unix-based平台（比如Linux），多平台适配</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>占用空间比较大，下载了所有的包</li>
+<li>中文支持不友好，如果安装路径有中文的话会很麻烦</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>MiKTex<ul>
+<li>优点：<ul>
+<li>安装简单</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>软件由个人维护，部分包更新可能不及时</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="前端编辑工具"><a href="#前端编辑工具" class="headerlink" title="前端编辑工具"></a>前端编辑工具</h3><p>我们安装前端编辑工具的目的是让我们在写的时候更一目了然、更方便。</p>
+<ol>
+<li>Visual Studio Code（LaTeX Workshop插件）<ul>
+<li>优点：<ul>
+<li>程序员必备软件，良好扩展，安装简单</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>对新手和非程序员不友好，熟练使用比较复杂</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>LaTeX Workshop<ul>
+<li>优点：<ul>
+<li>专业TeX编写软件</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>界面有点丑</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Vim<ul>
+<li>优点：<ul>
+<li>大神神器，无所不能</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>学习门槛巨大，只用键盘不用鼠标操作</li>
+<li>年代久远已经过时</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="LaTeX安装"><a href="#LaTeX安装" class="headerlink" title="LaTeX安装"></a>LaTeX安装</h1><p>很显然要安装两个东西，一个前端，一个后端。前端和后端各自挑一个，可以自由组合。</p>
+<div class="note info flat"><p>本教程使用Tex Live+Visual Studio Code(LaTeX Workshop插件)组合，如果你不想参考此项，可以跳过LaTeX安装的这一章。</p>
+</div>
+<div class="note info danger flat"><p>如果你Windows系统的用户名包含中文字符，则安装TeX Live极有可能失败！！！此时更推荐安装别的LaTeX实现版本！</p>
+</div>
+<h2 id="TeX-Live安装"><a href="#TeX-Live安装" class="headerlink" title="TeX Live安装"></a>TeX Live安装</h2><ol>
+<li>打开<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/">清华镜像源TeX Live镜像文件网站</a>下载iso文件<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../img/posts/LatexInstall/1.png" alt=""><br>不推荐官网下载是因为：LaTeX需要各种各样的宏包，可能安装程序在网上搜寻宏包的时候下载速度很不稳定，所以除了在<a target="_blank" rel="noopener" href="https://www.tug.org/texlive/">官方网站</a>下载外，我更推荐在镜像源下载完整的镜像文件，这时就不用再依靠网络下载宏包了，而是本地安装。</li>
+<li>点开install-tl-windows.exe安装程序（如果下载的是iso镜像文件，则先打开iso文件再去找对应的exe文件），点击左下角Advance.<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../img/posts/LatexInstall/2.png" alt=""></li>
+<li>修改配置然后安装，可以把修改路径改到D盘之类的。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../img/posts/LatexInstall/3.png" alt=""></li>
+<li>等待安装完成，右下角的关闭按钮会亮起，点击关闭就行。安装用时可能需要几十分钟，当看到“欢迎进入TeX Live的世界”时就安装完成了。</li>
+</ol>
+<h2 id="TeX-Live验证"><a href="#TeX-Live验证" class="headerlink" title="TeX Live验证"></a>TeX Live验证</h2><p>安装完成TeX Live后需要验证是否安装成功。</p>
+<ol>
+<li>命令行输入<code>latex -v</code>执行。可以看到latex版本。</li>
+<li>命令行输入<code>xelatex -v</code>执行，可以看到xelatex版本。</li>
+<li>命令行输入<code>pdflatex -v</code>执行，可以看到pdflatex版本。</li>
+</ol>
+<p>若三个命令都能正常执行，则安装成功。</p>
+<h2 id="Visual-Studio-Code-LaTeX-Workshop插件"><a href="#Visual-Studio-Code-LaTeX-Workshop插件" class="headerlink" title="Visual Studio Code(LaTeX Workshop插件)"></a>Visual Studio Code(LaTeX Workshop插件)</h2><ol>
+<li>安装<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Visual Studio Code</a>，应该没有程序员不会装VSCode吧、、、</li>
+<li>插件栏搜索LaTeX Workshop，点击Install就能装好了。</li>
+<li>按<kbd>F1</kbd>输入<code>Preferences: Open User Settings(JSON)</code>找到对应项点击，则打开了VSCode的设置文件。在该文件的花括号里粘贴以下内容：<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;latex-workshop.latex.tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;pdflatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;pdflatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.latex.recipes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">        <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;pdflatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xe-&gt;bib-&gt;xe-&gt;xe&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;pdf-&gt;bib-&gt;pdf-&gt;pdf&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="string">&quot;pdflatex&quot;</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.latex.clean.fileTypes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;*.aux&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.bbl&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.blg&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.idx&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.ind&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.lof&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.lot&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.out&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.toc&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.acn&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.acr&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.alg&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.glg&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.glo&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.gls&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.ist&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.fls&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.log&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;*.fdb_latexmk&quot;</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="comment">//tex文件浏览器，可选项为&quot;none&quot; &quot;browser&quot; &quot;tab&quot; &quot;external&quot;</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.view.pdf.viewer&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tab&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="comment">//自动编译tex文件</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.latex.autoBuild.run&quot;</span><span class="punctuation">:</span> <span class="string">&quot;onFileChange&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="comment">//显示内容菜单：（1）编译文件；（2）定位游标</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.showContextMenu&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="comment">//显示错误</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.message.error.show&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="comment">//显示警告</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.message.warning.show&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="comment">//从使用的包中自动补全命令和环境</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.intellisense.package.enabled&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="comment">//设置为never，为不清除辅助文件</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.latex.autoClean.run&quot;</span><span class="punctuation">:</span> <span class="string">&quot;never&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="comment">//设置vscode编译tex文档时的默认编译链</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.latex.recipe.default&quot;</span><span class="punctuation">:</span> <span class="string">&quot;lastUsed&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="comment">// 用于反向同步的内部查看器的键绑定。ctrl/cmd +点击(默认)或双击</span></span><br><span class="line"><span class="attr">&quot;latex-workshop.view.pdf.internal.synctex.keybinding&quot;</span><span class="punctuation">:</span> <span class="string">&quot;double-click&quot;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>请注意不要把花括号<code>&#123;</code>和<code>&#125;</code>给删了。</p>
+<h2 id="Visual-Studio-Code-LaTeX-Workshop插件-验证"><a href="#Visual-Studio-Code-LaTeX-Workshop插件-验证" class="headerlink" title="Visual Studio Code(LaTeX Workshop插件)验证"></a>Visual Studio Code(LaTeX Workshop插件)验证</h2><p>最后要验证是否各项功能都能正常运行，编写或者复制简单的LaTeX模板文件，然后如下图点击开始生成pdf，若成功即可。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="../../../img/posts/LatexInstall/4.png" alt=""></p>
+<p>至此，LaTeX的全部安装工作完成。</p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>一文读懂LaTeX安装（使用TeX Live+Visual Studio Code插件）</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://shuqian8421.github.io/posts/50991/">https://shuqian8421.github.io/posts/50991/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>疏堑</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2024-08-12</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2026-02-28</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/LaTeX/">LaTeX</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li><li class="reward-item"><a href="https://buymeacoffee.com/shuqian8421" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/BMACQRCode.png" alt="Buy Me a Coffee"/></a><div class="post-qr-code-desc">Buy Me a Coffee</div></li></ul></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#LaTeX%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">LaTeX简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8DLaTeX"><span class="toc-number">1.1.</span> <span class="toc-text">介绍LaTeX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%9A%84%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text">选择合适的软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LaTeX%E5%AE%9E%E7%8E%B0%E7%89%88%E6%9C%AC"><span class="toc-number">1.2.1.</span> <span class="toc-text">LaTeX实现版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E7%BC%96%E8%BE%91%E5%B7%A5%E5%85%B7"><span class="toc-number">1.2.2.</span> <span class="toc-text">前端编辑工具</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LaTeX%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">LaTeX安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TeX-Live%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">TeX Live安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TeX-Live%E9%AA%8C%E8%AF%81"><span class="toc-number">2.2.</span> <span class="toc-text">TeX Live验证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Visual-Studio-Code-LaTeX-Workshop%E6%8F%92%E4%BB%B6"><span class="toc-number">2.3.</span> <span class="toc-text">Visual Studio Code(LaTeX Workshop插件)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Visual-Studio-Code-LaTeX-Workshop%E6%8F%92%E4%BB%B6-%E9%AA%8C%E8%AF%81"><span class="toc-number">2.4.</span> <span class="toc-text">Visual Studio Code(LaTeX Workshop插件)验证</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By 疏堑</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://genuine-shortbread-148e4e.netlify.app/.netlify/functions/twikoo',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://genuine-shortbread-148e4e.netlify.app/.netlify/functions/twikoo',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo@1.7.0/dist/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="本博客框架为Hexo" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="本博客主题为Butterfly" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

@@ -1,0 +1,755 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Notes for STAT_PROB_2024 Review Course on Probability and Statistics [2024] | 疏堑的博客</title><meta name="author" content="疏堑"><meta name="copyright" content="疏堑"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Personal notes for HKU MDASC 2024fall preparatory course STAT_PROB_2024">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Notes for STAT_PROB_2024 Review Course on Probability and Statistics [2024]">
+<meta property="og:url" content="https://shuqian8421.github.io/posts/41305/index.html">
+<meta property="og:site_name" content="疏堑的博客">
+<meta property="og:description" content="Personal notes for HKU MDASC 2024fall preparatory course STAT_PROB_2024">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://shuqian8421.github.io/img/avatar.png">
+<meta property="article:published_time" content="2024-08-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-28T15:06:03.256Z">
+<meta property="article:author" content="疏堑">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shuqian8421.github.io/img/avatar.png"><link rel="shortcut icon" href="/img/website_favicon.png"><link rel="canonical" href="https://shuqian8421.github.io/posts/41305/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"距离本文章最先进一次更新已有","messageNext":"天，文章内容可能过时。"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 疏堑","link":"链接: ","source":"来源: 疏堑的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Notes for STAT_PROB_2024 Review Course on Probability and Statistics [2024]',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-02-28 23:06:03'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="/css/equipment.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.0.0"><link rel="alternate" href="/atom.xml" title="疏堑的博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/restaurant/"><i class="fa-fw fas fa-utensils"></i><span> 小饭馆</span></a></div><div class="menus_item"><a class="site-page" href="/equipment/"><i class="fa-fw fas fa-briefcase"></i><span> 装备栏</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="疏堑的博客"><span class="site-name">疏堑的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/restaurant/"><i class="fa-fw fas fa-utensils"></i><span> 小饭馆</span></a></div><div class="menus_item"><a class="site-page" href="/equipment/"><i class="fa-fw fas fa-briefcase"></i><span> 装备栏</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user-circle"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Notes for STAT_PROB_2024 Review Course on Probability and Statistics [2024]</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-27T16:00:00.000Z" title="发表于 2024-08-28 00:00:00">2024-08-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-02-28T15:06:03.256Z" title="更新于 2026-02-28 23:06:03">2026-02-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/HKU-Course-Notes/">HKU Course Notes</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">638</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Notes for STAT_PROB_2024 Review Course on Probability and Statistics [2024]"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><div class="tabs" id="head"><ul class="nav-tabs no-default"><button type="button" class="tab " data-href="head-1">Course Information</button></ul><div class="tab-contents"><div class="tab-item-content" id="head-1"><ul>
+<li>Course Name: STAT_PROB_2024 Review Course on Probability and Statistics [2024]</li>
+<li>Instructor: Dr. Olivia T.K. Choi Office: Room 208, Run Run Shaw Building P: 3917-1985 E: ochoi@hku.hk</li>
+<li>Classes: This course is offered as pre-recorded online video. The videos are available on Moodle on the following dates: August12, 15, 19 and 22, 2024</li>
+<li>Course Objectives: This course is designed for students newly admitted to the HKU Master of Statistics / Master of Data Science programmes, and serves as a review of basic probability and statistical concepts that are needed for the courses in these programmes. </li>
+<li>Course Contents and Topics: </li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Chapter</th>
+<th style="text-align:center">Topics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center"><strong>Basic probability theory</strong>: Set; event; probability; conditional probability; Bayes’ rule; random variable; density/mass function and distribution function.</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center"><strong>Distributions and moments</strong>: Bivariate distribution; joint, marginal and conditional distributions; expectation; variance; raw and central moments; higher moment; moment-generating function; covariance and correlation; iterated moments; common parametric distributions.</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center"><strong>Sampling and estimation</strong>: Sample mean and variance; law of large numbers; central limit theorem; properties of point estimators; method of moments; maximum likelihood; interval estimation and confidence interval.</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center"><strong>Hypothesis testing</strong>: Null and composite hypotheses; test statistic; type I/II errors; power function; p -value; duality principle; hypothesis tests regarding means, variances and proportions.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Assessment: This course is optional and no assessment is assigned. Students are however encouraged to solidify their conceptual understanding by attempting the exercises in the reference texts. </li>
+<li>Reference text books:<br>Miller, I. and Miller, M.: John E. Freund’s Mathematical Statistics with Applications (2014, 8th edition)<br>DeGroot, M. H. and Schervish, M. J.: Probability and Statistics (2012, 4th edition)<br>Ross, S.: A First Course in Probability (2012, 9th edition)</li>
+</ul></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<h1 id="Basic-Probability-Theory"><a href="#Basic-Probability-Theory" class="headerlink" title="Basic Probability Theory"></a>Basic Probability Theory</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>We will review the following topics:</p>
+<ol>
+<li><strong>Basic probablilty theory</strong>: Set; event; probability; Bayes’ rule; random variable; density/mass/distribution functions.</li>
+<li><strong>Distributions and moments</strong>: Joint/marginal/conditional distributions; moment and generating functions; covariance and correlation; iterated moments; common parametric distributions.</li>
+<li><strong>Sampling and estimation</strong>: Sample mean and variance; large sample theories; properties of point estimators; method of moments; maximum likelihood; interval estimation and confidence interval.</li>
+<li><strong>Hypothesis testing</strong>: Null and composite hypotheses; test statistic; type I/II errors; power functions; p-value; duality principle; hypothesis tests regarding means, variances and proportions.</li>
+</ol>
+<h2 id="Sets-events-and-probability"><a href="#Sets-events-and-probability" class="headerlink" title="Sets, events and probability"></a>Sets, events and probability</h2><h3 id="Sets-and-events"><a href="#Sets-and-events" class="headerlink" title="Sets and events"></a>Sets and events</h3><ol>
+<li>A sample space is a set containing all possible outcomes.<br>An event is a subset of the sample space.An empty event is the empty set.</li>
+<li>For two or more sets, the <strong>intersection operator</strong> $\cap$ extracts elements common to both sets.<br>The intersection of sets cannot have more elements than the individual sets.</li>
+<li>For two or more sets, the <strong>union operator</strong> $\cup$ combines elements from<br>both sets.<br>The union of sets cannot have fewer elements than the individual sets.</li>
+<li>Two sets $E_1$ and $E_2$ are disjoint if $E_1 \cap E2 = \emptyset$ (nothing in common).</li>
+<li>The sets $E_1,E_2,\dots,E_n$:<ul>
+<li>are <strong>mutually exclusive</strong> if $E_i \cap E_j = \emptyset$ for all $i \ne j$</li>
+<li>are <strong>exhaustive</strong> if $E_1 \cup \dots \cup E_n = \Omega$, (make up the sample space);</li>
+<li>form a <strong>partition</strong> if the above two properties are true.</li>
+</ul>
+</li>
+<li>The <strong>complement</strong> of a set $E$ is a set that contains all elements <em>not</em> in $E$, denoted as $E^c$.</li>
+</ol>
+<h3 id="Probability-of-events"><a href="#Probability-of-events" class="headerlink" title="Probability of events"></a>Probability of events</h3><ol>
+<li>The probability operator $\mathbb{P}$ assigns a number to each event to denote its “likelihood” of happening.<ul>
+<li>$\mathbb{P}(\emptyset) = 0, \mathbb{P}(\Omega) = 1$;</li>
+<li>$\mathbb{P}(E) \ge 0$ for any event $E$;</li>
+<li>$\mathbb{P}(E) + \mathbb{P}(E^c) = 1$;</li>
+<li>For mutually exclusive events $E_1,\dots,E_n, \mathbb{P}$ is additive, i.e.,<script type="math/tex; mode=display">\mathbb{P}(E_1\cup E_2\cup\dots E_n) = \mathbb{P}(E_1) + \mathbb{P}(E_2) + \dots + \mathbb{P}(E_n)</script></li>
+</ul>
+</li>
+<li>The <strong>inclusion-exclusion formula</strong> is extremely useful to convert the probabilities of $\cup$ to $\cap$, and vice versa:<script type="math/tex; mode=display">\mathbb{P}(\bigcup_{i=1}^n E_i)= \sum_{i} \mathbb{P}(E_i) - \sum_{i<j} \mathbb{P}(E_i\cap E_j) + \sum_{i<j<k} \mathbb{P}(E_i\cap E_j \cap E_k) + \dots + (-1)^{n+1}\mathbb{P}(\bigcap_{i=1}^n E_i)</script>We typically use it for 2 or 4 events, i.e.,<script type="math/tex; mode=display">\mathbb{P}(E_1\cup E_2) = \mathbb{P}(E_1) + \mathbb{P}(E_2) - \mathbb{P}(E_1\cap E_2)</script><script type="math/tex; mode=display">\mathbb{P}(E_1\cup E_2 \cup E_3) = \mathbb{P}(E_1)+\mathbb{P}(E_2)+\mathbb{P}(E_3)-\mathbb{P}(E_1\cap E_2)-\mathbb{P}(E_1\cap E_3)-\mathbb{P}(E_2\cap E_3)+\mathbb{P}(E_1\cap E_2\cap E_3)</script></li>
+</ol>
+<h2 id="Conditional-probability"><a href="#Conditional-probability" class="headerlink" title="Conditional probability"></a>Conditional probability</h2><h3 id="Probabilities-conditional-on-given-information"><a href="#Probabilities-conditional-on-given-information" class="headerlink" title="Probabilities conditional on given information"></a>Probabilities conditional on given information</h3><p>Sometimes, we deal with probabilities on the condition that we know something in advance.</p>
+<h3 id="Calculating-conditional-probabilities"><a href="#Calculating-conditional-probabilities" class="headerlink" title="Calculating conditional probabilities"></a>Calculating conditional probabilities</h3><ol>
+<li>Definition: Conditional probability<br>For two events $A$ and $B$, the <strong>conditional probability</strong> of event $A$ given the occurrence of event $B$ is written as $\mathbb{P}(A|B)$, calculated as<script type="math/tex; mode=display">\mathbb{P}(A|B) = \frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}</script>if $\mathbb{P}(B)&gt;0$.<br>This example simply reinstates that $\mathbb{P}(A\cap B)= \mathbb{P}(B)\mathbb{P}(A|B)$</li>
+<li>Theorem: Law of total probability<br>For events $B_1,\dots, B_n$ that form a partition (i.e., mutually exclusive &amp;<br>exhaustive) and event $A$,<script type="math/tex; mode=display">\mathbb{P}(A) = \sum_{i=1}^n \mathbb{P}(A\cap B_i) = \sum_{i=1}^n \mathbb{P}(B_i)\mathbb{P}(A|B_i)</script></li>
+<li>Theorem: Multiplication rule<br>For events $B_1,\dots,B_n$<script type="math/tex; mode=display">\mathbb{P}(\bigcap_{i=1}^n B_i) = \mathbb{P}(B_1)\mathbb{P}(B_2|B_1)\mathbb{P}(B_3|B_1\cap B_2)\dots \mathbb{P}(B_n|\bigcap_{i=1}^{n-1}B_i)</script></li>
+</ol>
+<h3 id="Independent-events"><a href="#Independent-events" class="headerlink" title="Independent events"></a>Independent events</h3><ol>
+<li>Two events $A$ and $B$ are said to be <strong>independent</strong> (written as $A \perp\kern-5pt\perp B$) if $P(A) = P(A|B)$, i.e., occurrence of $B$ does not affect the chances of $A$ happening. This implies $\mathbb{P}(A \cap B) = \mathbb{P}(A) \mathbb{P}(B)$<br>This can be extended to more than two events: Events $A_1,\dots,A_n$ are <strong>mutally independent</strong> if and only if<script type="math/tex; mode=display">\mathbb{P}(A_{k_1}\cap\dots\cap A_{k_m}) = \mathbb{P}(A_{k_1})\mathbb{P}(A_{k_2})\dots \mathbb{P}(A_{k_m})</script>for <em>every</em> combination of $k_1\ne k_2\ne\dots\ne k_m$ and $m\le n$</li>
+</ol>
+<h3 id="Bayes’-rule"><a href="#Bayes’-rule" class="headerlink" title="Bayes’ rule"></a>Bayes’ rule</h3><ol>
+<li>Theorem: Bayes’ rule<br>For two events $A$ and $B$ with $\mathbb{P}(A)\gt 0$ and $\mathbb{P}(B)\gt 0$<script type="math/tex; mode=display">\mathbb{P}(B|A)=\frac{\mathbb{P}(A|B)\mathbb{P}(B)}{\mathbb{P}(A)}</script>$\mathbb{P}(B)$ is known as the <strong>prior probability</strong> and $\mathbb{P}(B|A)$ the <strong>posterior probability</strong>.<br>$\mathbb{P}(B)=\mathbb{P}(B|A)\iff \mathbb{P}(A)=\mathbb{P}(A|B)$,i.e., $A$ and $B$ are independent and thus $A$ adds no information on $B$.</li>
+<li>In general, if $B_1,\dots,B_n$ constitute a partition, then<script type="math/tex; mode=display">\mathbb{P}(B_j|A) = \frac{\mathbb{P}(A|B_j)\mathbb{P}(B_j)}{\sum_{i=1}^n \mathbb{P}(A|B_i)\mathbb{P}(B_i)}</script></li>
+</ol>
+<h2 id="Random-variables-and-distributions"><a href="#Random-variables-and-distributions" class="headerlink" title="Random variables and distributions"></a>Random variables and distributions</h2><h3 id="Random-variables"><a href="#Random-variables" class="headerlink" title="Random variables"></a>Random variables</h3><ol>
+<li><p>A <strong>random variable</strong> is a function that maps each element of the sample space to a real number.</p>
+<p>A random variable is <em>realized</em> when we observe its value. We typically use capital letters (e.g., $X$, $Y$) to denote random variables and small letters (e.g., $x$, $y$) to denote their realizations.</p>
+<p>There are three main types of random variables — <strong>discrete</strong>, <strong>continuous</strong>, and <strong>mixed</strong>.</p>
+</li>
+<li><p>Discrete random variables — pmf<br>A random variable $X$ is <strong>discrete</strong> if it can only take on a countable (possibly countably infinite) number of values.</p>
+<p>Definition: Probability mass function<br>For a discrete random variable $X$, the <strong>probability mass function</strong> or pmf is defined as</p>
+<script type="math/tex; mode=display">p_X(x):=\mathbb{P}(X=x)</script><p>for $x\in X(\Omega)$, where $X(\Omega)$ is the set of all possible values of $X$<br>A valid pmf has the following properties:</p>
+<ul>
+<li>$p_X(x)\ge 0$ for all $x$</li>
+<li><script type="math/tex; mode=display">\sum_{x\in X(\Omega)}p_X(x) = 1</script></li>
+<li>For any subset $A\subset X(\Omega)$,$\mathbb{P}(X\in A)=\sum_{x\in A}p_X(x)$.</li>
+</ul>
+</li>
+<li>Discrete random variables — cdf<br>Definition: Cumulative distribution function<br>For a discrete random variable $X$, the <strong>cumulative distribution function</strong> or cdf is defined as<script type="math/tex; mode=display">F_X(x):=\mathbb{P}(X\le x)=\sum_{i\le x}p_X(i)</script>for $x \in \mathbb{R}$.It is often shortened as the <strong>distribution function</strong> of $X$.<br>A valid cdf has the following properties:<ul>
+<li>$F_X(a)\le F_X(b)$ if $a\le b$</li>
+<li><script type="math/tex; mode=display">\lim_{x\rightarrow-\infty} F_X(x)=0; \lim_{x\rightarrow\infty} F_X(x)=1</script></li>
+<li>$F_X(x)$ is right-continuous</li>
+<li><script type="math/tex; mode=display">\mathbb{P}(a\lt X\le b) = F(b)-F(a)</script></li>
+</ul>
+</li>
+<li><p>Continuous random variables — pdf<br>Definition: Continuous random variable<br>A random variable $X$ is (absolutely) <strong>continuous</strong> if there exists a non-negative function $f$ defined on the real line such that</p>
+<script type="math/tex; mode=display">\mathbb{P}(a\le X\le b)=\int_a^b f(x) \mathrm{d}x</script><p>for every $a\le b$, The function $f(x)$ is known as the <strong>probability density function</strong>(pdf) of $X$.</p>
+<p>A valid pdf has the following properties:</p>
+<ul>
+<li>$f(x)\ge 0$ for all $x$.</li>
+<li><script type="math/tex; mode=display">\int_{-\infty}^{\infty}f(x)\mathrm{d}x = \mathbb{P}(-\infty\le X\le \infty) = 1</script></li>
+<li>$\int_A f(x)\mathrm{d}x=\mathbb{P}(X\in A)$ where $A$ is any subset of $\mathbb{R}$</li>
+</ul>
+</li>
+<li>Continuous random variables — cdf<br>Definition: Cumulative distribution function<br>For a continuous random variable $X$, the (cumulative) <strong>distribution function</strong> or cdf is defined as<script type="math/tex; mode=display">F_X(x):=\mathbb{P}(X\le x) = \int_{-\infty}^x f_X(t)\mathrm{d}t</script>for $x\in\mathbb{R}$.</li>
+<li>Mixed random variables<br>This is known as a mixed random variable which has probability masses at some locations and densities at other locations.</li>
+</ol>
+<h1 id="More-on-Distributions-and-Moments"><a href="#More-on-Distributions-and-Moments" class="headerlink" title="More on Distributions and Moments"></a>More on Distributions and Moments</h1><h2 id="Bivariate-distributions"><a href="#Bivariate-distributions" class="headerlink" title="Bivariate distributions"></a>Bivariate distributions</h2><ol>
+<li>Joint distributions<ul>
+<li>Definition: Joint cumulative distribution function for 2 variables<br>For two random variables $X$ and $Y$ , the <strong>joint</strong> (cumulative) <strong>distribution function</strong> or joint cdf is defined as<script type="math/tex; mode=display">F_{X,Y}(x,y):=\mathbb{P}(X\le x, Y\le y)</script>for $(x,y)\in \mathbb{R}^2$</li>
+<li>Definition: Joint probability mass function $X$ and $Y$ are jointly discrete if there exists a <strong>joint probability mass function</strong> (joint pmf) such that<script type="math/tex; mode=display">p_{X,Y}(x,y):=\mathbb{P}(X=x,Y=y);F_{X,Y}(x,y)=\sum_{i\le x}\sum_{j\le y}p_{X,Y}(i,j)</script></li>
+<li>Definition: Joint probability density function $X$ and $Y$ are jointly continuous if there exists a <strong>joint probability density function</strong> (joint pdf) such that<script type="math/tex; mode=display">f_{X,Y}(x,y)\le 0\space \mathrm{for}\space \mathrm{all}\space x,y; F_{X,Y}(x,y)=\int_{-\infty}^y\int_{-\infty}^x f_{X,Y}(s,t)\mathrm{d}s \mathrm{d}t</script></li>
+</ul>
+</li>
+<li>Marginal distributions<ul>
+<li>Definition: Marginal pmf/pdf<br>For $X$ and $Y$ jointly discrete, the <strong>marginal pmf</strong> of $X$ and $Y$ are respectively given by<script type="math/tex; mode=display">p_X(x) = \mathbb{P}(X=x)=\sum_{y}p_{X,Y}(x,y); p_Y(y) = \mathbb{P}(Y=y)=\sum_{x}p_{X,Y}(x,y)</script>For $X$ and $Y$ jointly continuous, the <strong>marginal pdf</strong> of $X$ and $Y$ are respectively given by<script type="math/tex; mode=display">f_X(x) = \int_{\mathbb{R}} f_{X,Y}(x,y)\mathrm{d}y; f_Y(y) = \int_{\mathbb{R}} f_{X,Y}(x,y)\mathrm{d}x</script></li>
+</ul>
+</li>
+<li>Conditional distributions<ul>
+<li>Definition: Conditional pmf/pdf<br>For $X$ and $Y$ jointly discrete, the <strong>conditional pmf</strong> of $Y$ given $X$ is<script type="math/tex; mode=display">p_{Y|X}(y|x):=\mathbb{P}(Y=y|X=x)=\frac{\mathbb{P}(X=x,Y=y)}{\mathbb{P}(X=x)}=\frac{p_{X,Y}(x,y)}{p_X(x)}</script>if $p_X(x)\gt 0$.<br>For $X$ and $Y$ jointly continuous, the <strong>conditional pdf</strong> of Y given X is<script type="math/tex; mode=display">f_{Y|X}(y|x) = \frac{f_{X,Y}(x,y)}{f_X(x)}</script>if $f_X(x)\gt 0$.</li>
+<li>The conditional cdf can be obtained from the conditional pmf/pdf:<script type="math/tex; mode=display">F_{Y|X}(y|x) = \left\{
+ \begin{array}{ll}
+ \sum_{i\le y} p_{Y|X}(i|x), & \mathrm{if\space discrete;} \\
+ \int_{-\infty}^y f_{Y|X}(t|x)\mathrm{d}t & \mathrm{if\space continuous.} \\
+ \end{array} 
+ \right.</script></li>
+</ul>
+</li>
+<li>Independence of random variables<ul>
+<li>Definition: Independent random variables<br>Two random variables $X$ and $Y$ are <strong>independent</strong> if and only if the joint pmf/pdf is equal to the product of the marginal pmf’s/pdf’s, i.e.,<script type="math/tex; mode=display">p_{X,Y}(x,y) = p_X(x) p_Y(y)\space \mathrm{(discrete);}</script><script type="math/tex; mode=display">f_{X,Y}(x,y) = f_X(x) f_Y(y)\space \mathrm{(continuous);}</script>for all possible values of $x$ and $y$.</li>
+<li>The above definition also works for cdf’s, i.e.,<br>$F_{X,Y}(x,y) = F_X(x) F_Y(y)$ for all $x$ and $y$.</li>
+</ul>
+</li>
+</ol>
+<h2 id="Expectations-and-moments"><a href="#Expectations-and-moments" class="headerlink" title="Expectations and moments"></a>Expectations and moments</h2><h3 id="Mathematical-expectations"><a href="#Mathematical-expectations" class="headerlink" title="Mathematical expectations"></a>Mathematical expectations</h3><ol>
+<li>Definition: Expectation<ul>
+<li>The <strong>expectation</strong> of a random variable $X$ (written as $\mathbb{E}(X)$) is defined as<script type="math/tex; mode=display">\mathbb{E}(X) = \left\{
+\begin{array}{ll}
+\sum_x x p_X(x), & \mathrm{if\space} X \mathrm{\space is\space discrete;} \\
+\int_{\mathbb{R}}x f_X(x)\mathrm{d}x & \mathrm{if\space} X \mathrm{\space is\space continuous.} \\
+\end{array}
+\right.</script></li>
+<li>The expectation of g(X), a (known) function of X, can be defined similarly:<script type="math/tex; mode=display">\mathbb{E}[g(X)] = \left\{
+\begin{array}{ll}
+\sum_x g(x) p_X(x), & \mathrm{if\space} X \mathrm{\space is\space discrete;} \\
+\int_{\mathbb{R}}g(x) f_X(x)\mathrm{d}x & \mathrm{if\space} X \mathrm{\space is\space continuous.} \\
+\end{array}
+\right.</script></li>
+<li>We say that the expectation (of $X$ or $g(X)$) does not exist if the sum or integral diverges.</li>
+<li>Properties of the expectation operator:<ol>
+<li>$\mathbb{E}(aX+b)=a\mathbb{E}(X)+b$ for any constants $a$, $b$ and random variable $X$. We call $\mathbb{E}$ a linear operator.</li>
+<li>If $X\le Y$ for all possible outcomes in the sample space, then $\mathbb{E}(X) \le \mathbb{E}(Y)$.</li>
+<li>If $\mathbb{E}|X^a|$ exists for some $a \gt 0$, then $\mathbb{E}|X^b|$ exists for all $0 \lt b \lt a$. This also implies the existence of $\mathbb{E}(X^b)$.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Moments<ul>
+<li>Definition: Moments<br>The $n$th <strong>raw moment</strong> of a random variable $X$ is defined as<script type="math/tex; mode=display">\mathbb{E}(X^n) = \left\{
+\begin{array}{ll}
+\sum_x x^n p_X(x), & \mathrm{if\space} X \mathrm{\space is\space discrete;} \\
+\int_{\mathbb{R}}x^n f_X(x)\mathrm{d}x & \mathrm{if\space} X \mathrm{\space is\space continuous.} \\
+\end{array}
+\right.</script>if it exists. The first raw moment is also known as the <strong>mean</strong> of $X$, often denoted by $\mu$.<br>The $n$th <strong>central moment</strong> of a random variable $X$ is defined as<script type="math/tex; mode=display">\mathbb{E}[(X-\mu)^n] = \left\{
+\begin{array}{ll}
+\sum_x (x-\mu)^n p_X(x), & \mathrm{if\space} X \mathrm{\space is\space discrete;} \\
+\int_{\mathbb{R}}(x-\mu)^n f_X(x)\mathrm{d}x & \mathrm{if\space} X \mathrm{\space is\space continuous.} \\
+\end{array}
+\right.</script>if it exists.</li>
+</ul>
+</li>
+<li>Means, variances and standard deviations<ul>
+<li>Raw moments are moments about the origin; central moments are moments about the mean.</li>
+<li>Definition: Summary measures of a distribution<br>The <strong>mean</strong> of $X$,$\mu$ (or $\mathbb{E}(X)$), measures the central tendency of $X$.<br>The second central moment, $\mathbb{E}[(X-\mu)^2]$, is denoted by $\sigma^2$ or $\mathrm{Var}(X)$ and is known as the <strong>variance</strong> of $X$.<br>The square root of $\sigma^2$, $\sigma$, is known as the <strong>standard deviation</strong> of $X$ and has the same unit as $X$. Both $\sigma$ and $\sigma^2$ measure the dispersion(spread) of $X$ about the mean.</li>
+<li>The variance is equal to the second raw moment minus the square of the mean:<script type="math/tex; mode=display">\begin{align*}
+ \mathbb{E}[(X-\mu)^2] &= \mathbb{E}(X^2-2\mu X + \mu^2) \\
+  &= \mathbb{E}(X^2) - 2\mu\mathbb{E}(X) + \mu^2 \\
+  &= \mathbb{E}(X^2) - \mu^2
+ \end{align*}</script></li>
+<li>$\mathrm{Var}(a X + b)=a^2 \mathrm{Var}(X)$ for any constants $a$, $b$ and random variable $X$.</li>
+</ul>
+</li>
+<li>Higher moments<ul>
+<li>Definition: Skewness (third moment)<br>The third central moment provides a measure of the <strong>skewness</strong> (asymmetry) of the distribution. The coefficient of skewness is defined as<script type="math/tex; mode=display">\mathbb{E}[(X-\mu)^3] / \sigma^3</script>It is positive if the distribution is right-skewed, and negative if it is left-skewed.</li>
+<li>Definition: Kurtosis (fourth moment)<br>The fourth central moment provides a measure of the <strong>kurtosis</strong> (tailedness) of the distribution. The coefficient of kurtosis is defined as<script type="math/tex; mode=display">\mathbb{E}[(X-\mu)^4] / \sigma^4</script>A leptokurtic distribution has fat tails (kurtosis &gt; 3), and a platykurtic distribution has thin tails (kurtosis &lt; 3).</li>
+</ul>
+</li>
+<li>Moment-generating functions<br>Definition: Moment-generating function<br>The moment-generating function (mgf) of a random variable $X$ is defined as<script type="math/tex; mode=display">M_X(t) = \mathbb{E}(e^{tX})</script>if it exists, with $t$ the argument of the mgf. It is possible that $M_X(t)$ is finite only on a subset of $\mathbb{R}$.<br>This function is “moment-generating” in the sense that we can obtain moments from it:<script type="math/tex; mode=display">\mathbb{E}(X^n) = \frac{d^n}{dt^n}M_X(t)\bigg\vert_{t=0}</script>From the definition, we obtain that<br>$M_{aX+b}(t) = \mathbb{E}[e^{t(aX+b)}] = e^{bt}\mathbb{E}(e^{atX}) = e^{bt}M_X(at)$ for constants $a,b$ , if $M_X(at)$ exists.</li>
+<li>Moments of functions of random variables<br>For a function $g(X,Y)$ of two variables, the expectation is equal to <script type="math/tex; mode=display">\mathbb{E}[g(X,Y)]=\left\{
+\begin{array}{ll}
+\sum_x\sum_y g(x,y)p_{X,Y}(x,y), & \mathrm{if\space discrete;} \\
+\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} g(x,y)f_{X,Y}(x,y) \mathrm{d}x \mathrm{d}y & \mathrm{if\space continuous.} \\
+\end{array}
+\right.</script>Note the following useful properties, where $a,b$ are constants and $g,h$ are (known) functions.<ol>
+<li>$\mathbb{E}[a\cdot g(X) + b \cdot h(Y)] = a\mathbb{E}[g(X)]+b\mathbb{E}[h(Y)]\mathrm{(linearity)}$</li>
+<li>If $X$ and $Y$ are independent, then $\mathbb{E}[g(X)\cdot h(Y)]=\mathbb{E}[g(X)]\cdot \mathbb{E}[h(Y)]$</li>
+<li>If $X$ and $Y$ are independent, then $M_{aX+bY}(t)=M_X(at)M_Y(bt)$</li>
+</ol>
+</li>
+<li><p>Covariance and correlation<br>Definition: Covariance and correlation<br>For random variables $X,Y$ with means $\mu_X,\mu_Y$ and standard deviations $\sigma_X,\sigma_Y$, the <strong>covariance</strong> is defined by</p>
+<script type="math/tex; mode=display">\sigma_{XY} = Cov(X,Y):=\mathbb{E}[(X-\mu_X)(Y-\mu_Y)] = \mathbb{E}(XY) - \mu_X\mu_Y</script><p>The <strong>correlation coefficient</strong> is defined by</p>
+<script type="math/tex; mode=display">\rho_{XY} = Cor(X,Y)\mathrm{\space or\space} Corr(X,Y)=\frac{\sigma_{XY}}{\sigma_X\sigma_Y}</script><p>It can be shown that <script type="math/tex">-1\le \rho_{XY}\le 1</script> for any $X,Y$ such that $\rho_{XY}$ exists.</p>
+<p>Random variables having positive (negative) covariance/correlation coefficient are known as positively (negatively) correlated.</p>
+<p>Some properties of the covariance/correlation of two random variables:</p>
+<ol>
+<li>For independent variables, <script type="math/tex">\sigma_{XY}=\rho_{XY}=0</script>. The reverse is not true!</li>
+<li>$Var(X)=Cov(X,X)$.</li>
+<li>$Cov(X,Y)=Cov(Y,X)$.</li>
+<li>$Cov(aX+b,cY+d)=Cov(aX,cY)=acCov(X,Y)$.</li>
+<li>$Var(aX+bY)=a^2Var(X)+b^2Var(Y)+2abCov(X,Y)$.</li>
+<li>More generally, <script type="math/tex">Var(\sum_{i=1}^n a_iX_i) = \sum_{i=1}^n\sum_{i=1}^n a_ia_jX_iX_j</script>.</li>
+<li>$Cor(aX+b,cY+d)=sign(ac)Cor(X,Y)$,where $sign(ac)=-1$ if $ac\lt 0$ and 1 if $ac\gt 0$.</li>
+</ol>
+</li>
+<li>Conditional expectations<script type="math/tex; mode=display">\mathbb{E}(Y|X=x)=\left\{
+\begin{array}{ll}
+\sum_i i\cdot p_{Y|X}(i|X=x), & \mathrm{if\space discrete;} \\
+\int_{-\infty}^{\infty} t\cdot f_{Y|X}(t|x)\mathrm{d}t & \mathrm{if\space continuous.} \\
+\end{array}
+\right.</script>This is known as the conditional mean. The conditional variance can be computed as $\mathbb{E}(Y^2|X=x)-[\mathbb{E}(Y|X=x)]^2$.</li>
+<li>Iterated moments<br>Theorem: Law of total expectation/variance<br>For random variables $X,Y$, we have<br><script type="math/tex">\mathbb{E}(X)=\mathbb{E}[\mathbb{E}(X|Y)]</script>;<br><script type="math/tex">Var(X)=\mathbb{E}[Var(X|Y)]+Var[\mathbb{E}(X|Y)]</script>.</li>
+</ol>
+<h2 id="Some-common-distributions"><a href="#Some-common-distributions" class="headerlink" title="Some common distributions"></a>Some common distributions</h2><h3 id="Discrete-distribution-—-Uniform-a-b"><a href="#Discrete-distribution-—-Uniform-a-b" class="headerlink" title="Discrete distribution — Uniform(a, b)"></a>Discrete distribution — Uniform(a, b)</h3><p>For integers $a$ and $b$ with $a \le b$, the <strong>discrete uniform distribution</strong> puts equal point masses at $a, a + 1, a + 2, \dots , b$.</p>
+<p>pmf: <script type="math/tex">p_X(x) = \frac{1}{b-a+1},\space x\in \{ a,a+1,\dots,b \}</script></p>
+<p>cdf: <script type="math/tex">F_X(x)=\frac{\lfloor x\rfloor-a+1}{b-a+1},\space x\in[a,b]</script></p>
+<p>Mean: <script type="math/tex">\mathbb{E}(X)=\frac{a+b}{2}</script></p>
+<p>Variance: <script type="math/tex">\mathrm{Var}(X)=\frac{(b-a+1)^2-1}{12}</script></p>
+<p>mgf: (omitted)</p>
+<h3 id="Discrete-distribution-—-Bernoulli-p"><a href="#Discrete-distribution-—-Bernoulli-p" class="headerlink" title="Discrete distribution — Bernoulli(p)"></a>Discrete distribution — Bernoulli(p)</h3><p>The <strong>Bernoulli distribution</strong> models the number of successes of a single trial with success probability $p\in [0,1]$</p>
+<p>pmf: <script type="math/tex">pX(x)=p^x(1-p)^{1-x},\space x\in \{0,1\}</script></p>
+<p>cdf: <script type="math/tex">F_X(x)=\left\{
+  \begin{array}{ll}
+  0 & x \in (-\infty,0) \\
+  1-p &  x\in [0,1)\\
+  1 & x\in [1,\infty)
+  \end{array}
+  \right.</script></p>
+<p>Mean: <script type="math/tex">\mathbb{E}(X)=p</script></p>
+<p>Variance: <script type="math/tex">\mathrm{Var}(X)=p(1-p)</script></p>
+<p>mgf: <script type="math/tex">M_X(t)=(1-p)+pe^t,\space t\in\mathbb{R}</script></p>
+<h3 id="Discrete-distribution-—-Binomial-n-p"><a href="#Discrete-distribution-—-Binomial-n-p" class="headerlink" title="Discrete distribution — Binomial(n,p)"></a>Discrete distribution — Binomial(n,p)</h3><p>The Binomial distribution models the number of successes of n independent trials, each with success probability $p \in [0, 1]$.</p>
+<p>pmf: <script type="math/tex">p_X(x)=\binom{n}{x}p^x(1-p)^{n-x},\space x\in \{0,1,\dots,n\}</script></p>
+<p>cdf: (no simple expression)</p>
+<p>Mean: <script type="math/tex">\mathbb{E}(X)=np</script></p>
+<p>Variance: <script type="math/tex">\mathrm{Var}(X)=np(1-p)</script></p>
+<p>mgf: <script type="math/tex">M_X(t)=[(1-p)+pe^t]^n,\space t\in\mathbb{R}</script></p>
+<p>$\binom{n}{x}=n!/[x!(n-x)!]$ is the binomial coefficient.</p>
+<p>If <script type="math/tex">X_1,X_2,\dots,X_n</script> are independent and identically distributed as Bernoulli(p), then the sum <script type="math/tex">\sum_i X_i \sim \text{Binomial}(n,p)</script>.</p>
+<h3 id="Discrete-distribution-—-Poisson-λ"><a href="#Discrete-distribution-—-Poisson-λ" class="headerlink" title="Discrete distribution — Poisson(λ)"></a>Discrete distribution — Poisson(λ)</h3><p>The Poisson distribution arises in two contexts: (1) Number of arrivals (occurrences) in a specific time period; (2) Approximation to<br>the binomial distribution. It has a single parameter $\lambda \gt 0$.</p>
+<p>pmf: <script type="math/tex">p_X(x)=\frac{\lambda^xe^{-\lambda}}{x!},\space x\in \{0,1,2,\dots\}</script></p>
+<p>cdf: (no simple expression)</p>
+<p>Mean: <script type="math/tex">\mathbb{E}(X)=\lambda</script></p>
+<p>Variance: <script type="math/tex">\mathrm{Var}(X)=\lambda</script></p>
+<p>mgf: <script type="math/tex">M_X(t)=e^{\lambda(e^t-1)},\space t\in\mathbb{R}</script></p>
+<p>$\lambda$ is known as the parameter. It can be shown that, if the arrival between any two events (interarrival time) is independently exponentially distributed with mean $1/\lambda$, then the number of arrivals by time 1 follows $\text{Poisson}(\lambda)$.</p>
+<p>If $X_1,X_2,\dots,X_n$ are independent and each has a $\text{Poisson}(\lambda_i)$ distribution (i.e., the rate can be different for each $X_i$), then  the sum $\sum_i X_i\sim\text{Poisson}(\sum_i\lambda_i)$</p>
+<p>If the binomial parameters $n\rightarrow \infty,p\rightarrow 0$ but $ np\rightarrow \lambda $, then $\text{Binomial}(n,p)\rightarrow \text{Poisson}(\lambda)$. The approximation works well if $n\gt 100$ and $np\lt 10$.</p>
+<h3 id="Discrete-distribution-—-NegBin-r-p-amp-Geom-p"><a href="#Discrete-distribution-—-NegBin-r-p-amp-Geom-p" class="headerlink" title="Discrete distribution — NegBin(r, p) &amp; Geom(p)"></a>Discrete distribution — NegBin(r, p) &amp; Geom(p)</h3><p>The <strong>negative binomial distribution</strong> models the number of failures before r successes are achieved, with trials independent of each other and having success probability $p\in(0,1]$</p>
+<p>pmf: <script type="math/tex">p_X(x)=\binom{r+x-1}{x}p^r(1-p)^x,\space x\in \{0,1,2,\dots\}</script>.</p>
+<p>cdf: (no simple expression)</p>
+<p>Mean: <script type="math/tex">\mathbb{E}(X)=r(1-p)/p</script></p>
+<p>Variance: <script type="math/tex">\mathrm{Var}(X)=r(1-p)/p^2</script></p>
+<p>mgf: <script type="math/tex">M_X(t)=[\frac{p}{1-(1-p)e^t}]^r,\space t\lt -\log(1-p)</script></p>
+<p>The special case of $r=1$ is known as the <strong>geometric distribution</strong>.</p>
+<p>If <script type="math/tex">X_1,X_2,\dots,X_r</script> are independent <script type="math/tex">\text{Geometric}(p)</script> random variables, then <script type="math/tex">\sum_{i=1}^r X_i\sim \text{NegBin}(r,p)</script></p>
+<p>The geometric distribution is the only discrete distribution that is <strong>memoryless</strong>.</p>
+<h3 id="Continuous-distribution-—-Uniform-a-b"><a href="#Continuous-distribution-—-Uniform-a-b" class="headerlink" title="Continuous distribution — Uniform(a, b)"></a>Continuous distribution — Uniform(a, b)</h3><p>For real numbers $a$ and $b$ with $a\lt b$, the <strong>continuous uniform distribution</strong> has a constant density over $[a,b]$.</p>
+<p>pdf: <script type="math/tex">f_X(x)=\frac{1}{b-a},\space x\in [a,b]</script></p>
+<p>cdf: <script type="math/tex">F_X(x)=\frac{x-a}{b-a},\space x\in[a,b]</script></p>
+<p>Mean: <script type="math/tex">\mathbb{E}(X)=\frac{a+b}{2}</script></p>
+<p>Variance: <script type="math/tex">\mathrm{Var}(X)=\frac{(b-a)^2}{12}</script></p>
+<p>mgf: <script type="math/tex">M_X{t}=\frac{e^{bt}-e^{at}}{(b-a)t},\space t\ne 0; M_X(0)=1</script></p>
+<h3 id="Continuous-distribution-—-Beta-α-β"><a href="#Continuous-distribution-—-Beta-α-β" class="headerlink" title="Continuous distribution — Beta(α, β)"></a>Continuous distribution — Beta(α, β)</h3><p>The <strong>beta distribution</strong> generalizes the uniform distribution on the [0, 1] interval. For parameters $\alpha,\beta\gt 0$, it has the fowwing quantities:</p>
+<p>pdf: <script type="math/tex">f_X(x)=\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta-1},\space x\in[0,1]</script></p>
+<p>cdf: (no simple expression)</p>
+<p>Mean: <script type="math/tex">\mathbb{E}(X)=\frac{\alpha}{\alpha+\beta}</script></p>
+<p>Variance: <script type="math/tex">\mathrm{Var}(X)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}</script></p>
+<p>mgf: (no simple expression)</p>
+<p>$\Gamma(t)=\int_0^{\infty}x^{t-1}e^{-x}\mathrm{d}x$ is the gamma function.<br>Note that $\Gamma(t)=(t-1)\Gamma(t-1)$ and $\Gamma(n)=(n-1)!$ for integral $n$.</p>
+<p>The $\text{Beta}(1, 1)$ and $\text{Uniform}(0, 1)$ distributions are identical.</p>
+<p>A beta distribution is left-skewed if $\alpha\gt\beta$ (large mean) and right-skewed if $\alpha\lt\beta$ (small mean).</p>
+<p>If $X_1, \dots , X_n$ are independent $\text{Uniform}(0, 1)$ random variables, then the $k$th order statistic (i.e., $k$th smallest number among the $X_i$’s) has a $\text{Beta}(k, n + 1 − k)$ distribution.</p>
+<h3 id="Continuous-distribution-Gamma-α-β-amp-Exponential-β"><a href="#Continuous-distribution-Gamma-α-β-amp-Exponential-β" class="headerlink" title="Continuous distribution - Gamma(α, β) &amp; Exponential(β)"></a>Continuous distribution - Gamma(α, β) &amp; Exponential(β)</h3><p>The <strong>gamma distribution</strong> has connections with the sum of interarrival times mentioned above for the Poisson distribution.</p>
+<p>For parameters $\alpha,\beta\gt 0$,</p>
+<p>pdf: <script type="math/tex">f_X(x)=\frac{\beta^{\alpha}}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x},\space x\in [0,\infty)</script></p>
+<p>cdf: (no simple expression)</p>
+<p>Mean: <script type="math/tex">\mathbb{E}(X)=\alpha / \beta</script></p>
+<p>Variance <script type="math/tex">\mathrm{Var}(X)=\alpha / \beta^2</script></p>
+<p>mgf: <script type="math/tex">M_X{t}=(\frac{\beta}{\beta-t})^{\alpha},\space t\lt \beta</script></p>
+<p>$\alpha$ is known as the <em>shape</em> parameter and $\beta$ the <em>rate</em> parameter.</p>
+<p>The special case of $\alpha=1$ is known as the <strong>exponential distribution</strong>. The corresponding quantities are:</p>
+<p>pdf: <script type="math/tex">f_X(x)=\beta e^{-\beta x},\space x\in [0,\infty)</script></p>
+<p>cdf: <script type="math/tex">F_X(x)=1- e^{-\beta x},\space x\in[0,\infty)</script></p>
+<p>Mean: <script type="math/tex">\mathbb{E}(X)=1/ \beta</script></p>
+<p>Variance <script type="math/tex">\mathrm{Var}(X)=1/ \beta^2</script></p>
+<p>mgf: <script type="math/tex">M_X{t}=\frac{\beta}{\beta-t},\space t\lt \beta</script></p>
+<p>If <script type="math/tex">X_1,\dots,X_n</script> are independent <script type="math/tex">\mathrm{Exponential}(\beta)</script> random variables, then $\sum_{i=1}^n X_i \sim\mathrm{Gamma}(n,\beta)$</p>
+<p>If <script type="math/tex">X_1,\dots,X_n</script> are independent <script type="math/tex">\mathrm{Gamma}(\alpha_i,\beta)</script> random variables, then $\sum_i X_i \sim\mathrm{Gamma}(\sum_i \alpha_i,\beta)$</p>
+<p>If <script type="math/tex">X\sim \mathrm{Gamma}(\alpha,\beta)</script>, then <script type="math/tex">cX\sim \mathrm{Gamma}(\alpha,\beta/c)</script> for any constant $c\gt 0$</p>
+<p>The exponential distribution is the only continuous distribution that is <strong>memoryless</strong>, i.e., the distribution of $X-m$ given $X\ge m$ is the same exponential.</p>
+<h3 id="Continuous-distribution-Chi-squared-nu"><a href="#Continuous-distribution-Chi-squared-nu" class="headerlink" title="Continuous distribution - Chi-squared($\nu$)"></a>Continuous distribution - Chi-squared($\nu$)</h3><p>The <strong>chi-squared</strong>(<script type="math/tex">\chi^2</script>) <strong>distribution</strong> has a single parameter $\nu$, known as the <strong>degree-of-freedom</strong> parameter.</p>
+<p>pdf: <script type="math/tex">f_X(x)=\frac{1}{2^{\nu/2}\Gamma(\nu/2)}x^{\nu/2-1}e^{-x/2},\space x\in[0,\infty)</script></p>
+<p>cdf: (no simple expression)</p>
+<p>Mean: <script type="math/tex">\mathbb{E}(X)=\nu</script></p>
+<p>Variance: <script type="math/tex">\mathrm{Var}(X)=2\nu</script></p>
+<p>mgf: <script type="math/tex">M_X(t)=(\frac{1}{1-2t})^{\nu/2},\space t\lt\frac{1}{2}</script></p>
+<p>The <script type="math/tex">\chi^2(\nu)</script> distribution is equvalent to the $\mathrm{Gamma}(\nu/2,1/2)$ distribution.</p>
+<p>If <script type="math/tex">X_1,\dots,X_n</script> are indenenpent <script type="math/tex">\mathrm{Normal}(0,1)</script> random variables, then $\sum_{i=1}^n X_i^2 \sim \chi^2(n)$.</p>
+<p>If <script type="math/tex">X_1,\dots,X_n</script> are indenenpent <script type="math/tex">\chi^2(\nu_i)</script> random variables, then $\sum_i X_i^2 \sim \chi^2(\sum_i\nu_i)$. This follows from the same property of the gamma distribution.</p>
+<h3 id="Continuous-distribution-Normal-mu-sigma-2"><a href="#Continuous-distribution-Normal-mu-sigma-2" class="headerlink" title="Continuous distribution - Normal($\mu$,$\sigma^2$)"></a>Continuous distribution - Normal($\mu$,$\sigma^2$)</h3><p>The <strong>normal distribution</strong> (or Gaussian distribution) is the cornerstone of statistics. For parameters $\mu$ and $\sigma^2\gt 0$, it has the following quantities:</p>
+<p>pdf: <script type="math/tex">f_X(x)=\frac{1}{\sqrt{2\pi\sigma^2}}exp{-\frac{(x-\mu)^2}{2\sigma^2}},\space x\in\mathbb{R}</script></p>
+<p>cdf: (no simple expression)</p>
+<p>Mean: <script type="math/tex">\mathbb{E}(X)=\mu</script></p>
+<p>Variance: <script type="math/tex">\mathrm{Var}(X)=\sigma^2</script></p>
+<p>mgf: <script type="math/tex">M_X(t)=exp\{\mu t+\frac{1}{2}\sigma^2t^2\}</script></p>
+<p>The Normal(0,1) or N(0,1) distribution is known as the <strong>standard distrubution</strong>. Its cdf is often denoted by the Greek letter $\Phi$.</p>
+<p>If <script type="math/tex">X\sim N(\mu,\sigma^2)</script>, then <script type="math/tex">(X-\mu)/\sigma\sim N(0,1)</script>. This is known as standardization.</p>
+<p>If <script type="math/tex">X\sim N(\mu,\sigma^2)</script>, then <script type="math/tex">aX+b\sim N(a\mu+b,a^2\sigma^2)</script> for any constants <script type="math/tex">a,b</script>.</p>
+<p>If $X_1,\dots,X_n$ are independent $N(\mu_i,\sigma_i^2)$ random variables, then $\sum_i X_i\sim N(\sum_i\mu_i,\sum_i\sigma_i^2)$.</p>
+<p>Normal approximation to the binomial: Binomial(n,p) can be approximated by N(np,np(1-p)) when n is large. In fact, as $n\rightarrow \infty$, we have</p>
+<script type="math/tex; mode=display">\frac{Y-np}{\sqrt{np(1-p)}}\xrightarrow{\text{d}} N(0,1)</script><p>Several other distributions also approach the normal in the limit.</p>
+<ul>
+<li>Poisson($\lambda$) can be approximated by N($\lambda$,$\lambda$) if $\lambda$ is large.</li>
+<li>Gamma($\alpha$,$\beta$) can be approximated by $N(\alpha/\beta,\alpha/\beta^2)$ if $\alpha$ is large.</li>
+<li>NegBin(r,p) can be approximated by $N(r(1-p)/p,r(1-p)/p^2)$ if r is large.</li>
+</ul>
+<h3 id="Continuous-distribution-honourable-mention"><a href="#Continuous-distribution-honourable-mention" class="headerlink" title="Continuous distribution - honourable mention"></a>Continuous distribution - honourable mention</h3><p>In statistics you will often hear the <strong>t</strong> and <strong>F</strong>  distributions. They are the results of combining independent variables mentioned above, for example: </p>
+<script type="math/tex; mode=display">T=\frac{Z}{\sqrt{W/\nu}}</script><p>gives a t-distributed random variable, where $Z\sim N(0,1),W\sim \chi^2(\nu)$ and $Z\perp\kern-5pt\perp W$, and</p>
+<script type="math/tex; mode=display">F=\frac{X_1/\nu_1}{X_2/\nu_2}</script><p>is distributed, where $X_1\sim\chi^2(\nu_1)$,$X_2\sim\chi^2(\nu_2)$ and $X_1\perp\kern-5pt\perp X_2$</p>
+<h1 id="Sampling-and-Estimation"><a href="#Sampling-and-Estimation" class="headerlink" title="Sampling and Estimation"></a>Sampling and Estimation</h1><h2 id="Sampling-distributions"><a href="#Sampling-distributions" class="headerlink" title="Sampling distributions"></a>Sampling distributions</h2><ul>
+<li>A <strong>population</strong> is the complete set of items or events of interest. A <strong>sample</strong> is a subset of outcomes collected.</li>
+<li>A <strong>random sample</strong> is a sequence of i.i.d. random variables from a<br>population distribution. Let <script type="math/tex">\{X_1, X_2, \dots , X_n \}</script> denote a random<br>sample of size n.</li>
+<li>For a random sample  <script type="math/tex">\{X_1, X_2, \dots , X_n\}</script>, the sample mean $\bar{X}$ and sample variance $S^2$ are respectively defined by<script type="math/tex; mode=display">\bar{X}=\frac{1}{n}\sum_{i=1}^n X_i, S^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X})^2</script></li>
+<li>For a random sample <script type="math/tex">\{X_1, X_2, \dots , X_n\}</script> from a population with mean $\mu$ and variance $\sigma^2$,<script type="math/tex; mode=display">\mathbb{E}(\bar{X})=\mu, \mathrm{Var}(\bar{X})=\frac{\sigma^2}{n}</script></li>
+<li>The standard deviation (SD) of $\bar{X}$ , $\sigma/\sqrt{n}$, is known as the <strong>standard error</strong> (SE).</li>
+<li>The SE is smaller with larger $n$ — this is intuitive as a larger sample will allow us to estimate $\mu$ more precisely.</li>
+<li><p>For a random sample <script type="math/tex">\{X_1, X_2, \dots , X_n\}</script> from a population with mean $\mu$ and variance $\sigma^2$,</p>
+<script type="math/tex; mode=display">\mathbb{E}(S^2)=\sigma^2</script><h2 id="Sampling-distributions-for-the-normal-distribution"><a href="#Sampling-distributions-for-the-normal-distribution" class="headerlink" title="Sampling distributions for the normal distribution"></a>Sampling distributions for the normal distribution</h2></li>
+<li><p>For a random sample <script type="math/tex">\{X_1, X_2, \dots , X_n\}</script> from the $N(\mu,\sigma^2)$ distribution,</p>
+<ol>
+<li>$\bar{X}\sim N(\mu,\sigma^2/n)$</li>
+<li>$(n-1)S^2/\sigma^2\sim \chi^2(n-1)$</li>
+<li>$\bar{X}$ is independent of $S^2$</li>
+</ol>
+</li>
+<li>If $\bar{X}$ and $S^2$ are the size-n sample mean and variance of the $N(\mu,\sigma^2)$ distribution, then<script type="math/tex; mode=display">\frac{\bar{X}-\mu}{S/\sqrt{n}}</script>has the t-distribution with n-1 degrees of freedom, denoted as $t(n-1)$(or $t_{n-1}$)</li>
+<li>Properties of the $t(\nu)$ distribution:<ul>
+<li>pdf: <script type="math/tex; mode=display">f_X(x)=\frac{\Gamma[(1+\nu)/2]}{\sqrt{\nu\pi}\Gamma(\nu/2)}(1+\frac{x^2}{\nu})^{-\frac{1+\nu}{2}},x\in \mathbb{R}</script></li>
+<li>cdf: (no simple expression)</li>
+<li>Mean: $\mathbb{E}(X)=0$ if $\nu\gt 1$</li>
+<li>Variance: $Var(X)=\frac{\nu}{\nu-2}$ if $\nu\gt 2$</li>
+<li>mgf: (undefined)</li>
+</ul>
+</li>
+<li><p>The $100(1 − \alpha)\%$ <strong>confidence interval</strong> (CI) for $\mu$ based on a random<br>sample from a normal distribution is</p>
+<script type="math/tex; mode=display">[\bar{x}\pm t_{n-1,\alpha/2} \cdot \frac{s}{\sqrt{n}}]</script><p>where $\bar{x}$ is the (observed) sample mean, s is the (observed) sample SD, $n$ is the sample size and <script type="math/tex">t_{n-1,\alpha/2}</script> is defined as the value such that $\mathbb{P}(T\gt t_{n-1,\alpha/2})=\alpha/2$ for $T\sim t(n-1)$ (i.e., the $(1-\alpha/2)$ quantile of $T$) </p>
+<h2 id="Large-sample-theory"><a href="#Large-sample-theory" class="headerlink" title="Large sample theory"></a>Large sample theory</h2></li>
+<li><p>Weak law of large numbers(WLLN)<br>For a random sample <script type="math/tex">\{X_1, X_2, \dots , X_n\}</script> with finite (population) mean $\mu$,let $\bar{X_n}=\sum{i=1}^n X_i/n$ be the sample mean. The <strong>weak law of large numbers</strong> suggests that</p>
+<script type="math/tex; mode=display">\lim_{n\rightarrow\infty}\mathbb{P}(|\bar{X_n}-\mu|\gt\epsilon)=0</script><p>for any positive $\epsilon$. In other words, $\bar{X_n}$ converges in probability to $\mu$, written as $\bar{X_n}\overset{P}{\rightarrow}X$</p>
+</li>
+<li>Strong law of large numbers(SLLN)<br>For a random sample <script type="math/tex">\{X_1, X_2, \dots , X_n\}</script> with finite (population) mean $\mu$,let $\bar{X_n}=\sum{i=1}^n X_i/n$ be the sample mean. The <strong>strong law of large numbers</strong> suggests that<script type="math/tex; mode=display">\mathbb{P}(\lim_{n\rightarrow\infty}\bar{X_n}=\mu)=1</script>In other words, $\bar{X_n}$ converges almost surely to $\mu$, written as $\bar{X_n}\overset{a.s.}{\rightarrow}X$</li>
+<li><p>Central limit theorem<br>For a random sample <script type="math/tex">\{X_1, X_2, \dots , X_n\}</script> with finite (population) mean $\mu$ and variace $\sigma^2$,let <script type="math/tex">\bar{X_n}=\sum_{i=1}^n X_i/n</script> be the sample mean. The <strong>central limit theorem</strong> suggests that</p>
+<script type="math/tex; mode=display">\lim_{n\rightarrow\infty}\mathbb{P}(\frac{\bar{X_n}-\mu}{\sigma/\sqrt{n}}\le x)=\Phi(x)</script><p>pointwise. In other words, $(\bar{X_n}-\mu)/(\sigma/\sqrt{n})$ converges in distribution to a standard normal random variable, written as $(\bar{X_n}-\mu)/(\sigma/\sqrt{n})\overset{d}{\rightarrow}N(0,1)$</p>
+<h2 id="Point-estimation-properties-of-estimators"><a href="#Point-estimation-properties-of-estimators" class="headerlink" title="Point estimation - properties of estimators"></a>Point estimation - properties of estimators</h2></li>
+<li><p>Let the parameter be denoted as $\theta$. The <strong>point estimator</strong> of $\theta$, usually denoted as $\hat{\theta_n}$ where $n$ is the sample size, is a sample statistic used to estimate $\theta$. The realized value of $\hat{\theta_n}$ is called the <strong>point estimate</strong>.</p>
+</li>
+<li>Bias<br>The <strong>bias</strong> of an estimator $\hat{\theta_n}$ is given by<script type="math/tex; mode=display">Bias(\hat{\theta_n})=\mathbb{E}(\hat{\theta_n})-\theta</script>If the bias is zero for every possible value of $\theta$, the estimator is <strong>unbiased</strong>.<br>If the bias is not zero but tend to zero as $n\rightarrow \infty$, the estimator is <strong>asymptotically unbiased</strong>.<br>An estimator tend to underestimate the true value if $\mathbb{E}(\hat{\theta_n})\lt\theta$ and overestimate the true value if $\mathbb{E}(\hat{\theta_n})\gt\theta$</li>
+<li>Mean squared error<br>The <strong>mean squared error</strong>(MSE) of an estimator $\hat{\theta_n}$ is given by<script type="math/tex; mode=display">MSE(\hat{\theta_n})=\mathbb{E}[(\hat{\theta_n}-\theta)^2]=Var(\hat{\theta_n})+[Bias(\hat{\theta_n})]^2</script>To achieve a low MSE, an estimator needs to be accurate (close to the true value) and precise (with little variability).<br>For an unbiased estimator, the MSE is equal to $Var(\hat{\theta_n})$</li>
+<li>Efficiency<br>For two unbiased estimators <script type="math/tex">\hat{\theta_{1,n}}</script> and <script type="math/tex">\hat{\theta_{2,n}}</script> of <script type="math/tex">\theta</script>, <script type="math/tex">\hat{\theta_{1,n}}</script> is said to be <strong>more efficient</strong> than <script type="math/tex">\hat{\theta_{2,n}}</script> if<script type="math/tex; mode=display">Var(\hat{\theta_{1,n}})\le Var(\hat{\theta_{2,n}})</script>for all possible values of the true parameter $\theta$.<br>If either estimator is biased, it is better to make comparisons via the MSE since it also takes into account the magnitude of the bias.<br>An unbiased estimator that has the smallest variance among all other unbiased estimators for all $\theta$ is known as the <strong>uniformly minimum variance unbiased estimator</strong>, or UMVUE.</li>
+<li>Consistency<br>An estimator $\hat{\theta_n}$ is consistent for $\theta$, if for every $\epsilon\gt0$ we have<script type="math/tex; mode=display">\lim_{n\rightarrow\infty}\mathbb{P}(|\hat{\theta_n}-\theta|<\epsilon)=1</script>In other words, $\hat{\theta_n}\overset{p}{\rightarrow}\theta$ as $n\rightarrow\infty$ if it is consistent.<br>This definition is often hard to check. A useful workaround(sufficient but no necessary condition) is that if <script type="math/tex; mode=display">\lim_{n\rightarrow\infty}MSE(\hat{\theta_n})=0</script>then $\hat{\theta_n}$ is consistent for $\theta$.<h2 id="Point-estimation-methods"><a href="#Point-estimation-methods" class="headerlink" title="Point estimation -methods"></a>Point estimation -methods</h2></li>
+<li>The <strong>method of moments</strong> estimates parameters by equating the sample raw moments to the raw moments of the target distribution. They are defined as:<br>Sample <script type="math/tex">r</script>th raw mooment: <script type="math/tex">m_r:=\frac{1}{n}\sum_{i=1}^n X_i^r</script><br><script type="math/tex">r</script>th raw moment of the distribution: $\mathbb{E}(X^r)$</li>
+<li><p>Method of maximum likelihood<br>The method of <strong>maximum likelihood</strong> considers the pdf/pmf as a likelihood function that is maximized. Some definitions are in order:<br>Suppose random variables $X_1,\dots,X_n$ have joint pdf or pmf $f_X(x_1,\dots,x_n;\theta)$, where $\theta$ is a collection of parameters. The <strong>likelihood function</strong> L is simply $f_X(x_1,\dots,x_n;\theta)$, but viewing it as a function of $\theta$ with $x_1,\dots,x_n$ fixed at their observed values. That is,</p>
+<script type="math/tex; mode=display">L(\theta;x_1,\dots,x_n)=f_X(x_1,\dots,x_n;\theta)</script><p>The log-likelihood function <script type="math/tex">\ell</script> is the (natural) logarithm of <script type="math/tex">L</script>, i.e.,<script type="math/tex">\ell(\theta;x_1,\dots,x_n)=\log L(\theta;x_1,\dots,x_n)=\log f_X(x_1,\dots,x_n;\theta)</script><br>Note that <script type="math/tex">X_1,\dots,X_n</script> need not be independent.<br>The <strong>maximun likelihood estimator</strong>(MLE) $\hat{\theta_{ML}}$ of a parameter $\theta$ is the value of $\theta$ that maximizes the likelikood (or log-likelihood) function, that is,</p>
+<script type="math/tex; mode=display">\hat{\theta_{ML}}=\arg\max_{\theta}L(\theta;x_1,\dots,x_n)</script><p>If <script type="math/tex">\hat{\theta_{ML}}</script> is the MLE of <script type="math/tex">\theta</script>, then <script type="math/tex">g(\hat{\theta_{ML}})</script> is the MLE of <script type="math/tex">g(\theta)</script>, a function of <script type="math/tex">\theta</script>.</p>
+<h2 id="Interval-estimation"><a href="#Interval-estimation" class="headerlink" title="Interval estimation"></a>Interval estimation</h2></li>
+<li><p>For a random sample <script type="math/tex">\{X_1, X_2, \dots , X_n\}</script> used to estimate an unknown parameter $\theta$, let $L(X)$ and $U(X)$ be some functions of the random sample with</p>
+<script type="math/tex; mode=display">\mathbb{P}\{L(X)\le\theta\le U(X)\}=1-\alpha</script><p>where $1-\alpha$ is typically a high probability. The interval $[L(X),U(X)]$ is known as a $100(1-\alpha)\%$ <strong>confidence interval</strong>(CI) for the parameter $\theta$.</p>
+</li>
+<li>The following is a general recipe for finding CI’s:<ol>
+<li>Establish a <strong>pivotal quantity</strong>. A pivotal quantity is a function of the random sample and model parameters that has a distribution not involving $\theta$, written as $V(X\theta)$.</li>
+<li>Find some constants a,b such that <script type="math/tex; mode=display">\mathbb{P}(a\le V(X,\theta)\le b)=1-\alpha</script>Because the distribution of $V(X,\theta)$ does not depend on $\theta$, the constants a and b will also be free of $\theta$.</li>
+<li>Solve $a\le V(X,\theta)$ and $b\gt V(X,\theta)$ for $\theta$. This will give a lower limit $L(X)$ and an upper limit $U(X)$ such that<script type="math/tex; mode=display">\mathbb{P}{L(X)\le\theta\le U(X)}=1-\alpha</script>The required CI is given by $[L(X),U(X)]$.</li>
+</ol>
+</li>
+<li>Interval estimation for means - $N(\mu,\sigma^2)$<br>The pivotal quantity $\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)$<br>The CI for the population mean is given by $[\bar{X}\pm z_{\alpha/2}\frac{\sigma}{\sqrt{n}}]$</li>
+<li>Interval estimation for means - $N(\mu,?)$<br>The pivotal quantity $\frac{\bar{X}-\mu}{S/\sqrt{n}}\sim t(n-1)$<br>The CI for the population mean is given by $[\bar{X}\pm t_{n-1,\alpha/2}\frac{S}{\sqrt{n}}]$</li>
+<li>Interval estimation for means - <script type="math/tex">N(\mu_1,\sigma_1^2)</script> vs <script type="math/tex">N(\mu_2,\sigma_2^2)</script><br>The pivotal quantity is <script type="math/tex">\frac{(\bar{X}-\bar{Y})-(\mu_1-\mu_2)}{\sqrt{\sigma_1^2/m+\sigma_2^2/n}}\sim N(0,1)</script><br>The CI for the difference in means is given by <script type="math/tex">(\bar{X}-\bar{Y})\pm z_{\alpha/2}\sqrt{\sigma_1^2/m+\sigma_2^2/n}</script></li>
+<li>Interval estimation for means - <script type="math/tex">N(\mu_1,?)</script> vs <script type="math/tex">N(\mu_2,?)</script><br>The pivotal quantity is <script type="math/tex; mode=display">\frac{(\bar{X}-\bar{Y})-(\mu_1-\mu_2)}{\sqrt{S_p^2/m+S_p^2/n}}\sim t(m+n-2)</script>where <script type="math/tex">s_p^2=\frac{(m-1)S_1^2+(n-1)S_2^2}{m+n-2}</script><br>The CI for the difference in means is given by <script type="math/tex">(\bar{X}-\bar{Y})\pm t_{m+n-2,\alpha/2}\sqrt{S_p^2/m+S_p^2/n}</script></li>
+<li>Interval estimation for means - <script type="math/tex">N(\mu_1,?_1)</script> vs <script type="math/tex">N(\mu_2,?_2)</script><br>The pivotal quantity is <script type="math/tex; mode=display">\frac{(\bar{X}-\bar{Y})-(\mu_1-\mu_2)}{\sqrt{S_1^2/m+S_2^2/n}}\overset{\cdot}\sim t(\nu)</script>The number of degrees of freedom is<script type="math/tex; mode=display">\nu=\frac{(S_1^2/m+S_2^2/n)^2}{\frac{S_1^4}{m^2(m-1)}+\frac{S_2^4}{n^2(n-1)}}</script>The CI for the difference in means is given by <script type="math/tex">(\bar{X}-\bar{Y})\pm t_{\nu,\alpha/2}\sqrt{S_1^2/m+S_2^2/n}</script></li>
+<li>Interval estimation for variances - N(?,?)<br>The pivotal quantity is <script type="math/tex">\frac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)</script><br>The CI for the population variance is given by <script type="math/tex">[\frac{(n-1)S^2}{\chi^2_{n-1,\alpha/2}},\frac{(n-1)S^2}{\chi^2_{n-1,1-\alpha/2}}]</script></li>
+<li>Interval estimation for variances - <script type="math/tex">N(?,?_1)</script> vs <script type="math/tex">N(?,?_2)</script><br>The pivotal quantity is <script type="math/tex; mode=display">\frac{[(m-1)S_1^2/\sigma_1^2]/(m-1)}{[(n-1)S_2^2/\sigma_2^2]/(n-1)}=\frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}\sim F_{m-1,n-1}</script>The CI for the ratio of variances <script type="math/tex">\sigma_1^2/\sigma_2^2</script> is given by<script type="math/tex; mode=display">[\frac{1}{F_{m-1,n-1,\alpha/2}}\frac{S_1^2}{S_2^2},F_{n-1,m-1,\alpha/2}\frac{S_1^2}{S_2^2}]</script><h1 id="Hypothesis-Testing"><a href="#Hypothesis-Testing" class="headerlink" title="Hypothesis Testing"></a>Hypothesis Testing</h1></li>
+</ul>
+<h2 id="Introduction-to-hypothesis-testing"><a href="#Introduction-to-hypothesis-testing" class="headerlink" title="Introduction to hypothesis testing"></a>Introduction to hypothesis testing</h2><ul>
+<li>In statistics, a <strong>hypothesis test</strong> makes a decision between two mutually exclusive statements about the population, known as <strong>hypotheses</strong>.</li>
+<li>The <strong>null hypothesis</strong>, denoted as $H_0$, is a statement that has an established standing or the “standard” that is being put to the test.</li>
+<li>The <strong>alternative hypothesis</strong>, denoted as <script type="math/tex">H_1</script> or <script type="math/tex">H_a</script>, is a statement that challenges the null hypothesis.</li>
+<li>A <strong>simple hypothesis</strong> is one in which the hypothesis statement completely determines a single distribution. Otherwise, it is known as a <strong>composite hypothesis</strong>.</li>
+<li>A <strong>test statistic</strong> is a function of the observed data that is used to construct the condition of a hypothesis test, based on which a decision is made.</li>
+<li>The <strong>rejection</strong> (or critical) <strong>region</strong> is the range of values of the test statistic that, if observed, will lead to the rejection of <script type="math/tex">H_0</script> (and acceptance of <script type="math/tex">H_1</script>).</li>
+<li>The <strong>critical value</strong>(s) demarcates the rejection region.</li>
+<li>The probability of making a type I error, <script type="math/tex">P(\mathrm{reject}\quad H_0 | H_0 \mathrm{\quad is\quad true})</script>, is the <strong>type I error rate</strong> (<script type="math/tex">\alpha</script>); it is also known as the <strong>significance level</strong>.</li>
+<li>The probability of making a type II error, <script type="math/tex">P(\mathrm{accept}\quad H_0 | H_1 \mathrm{\quad is\quad true})</script>, is the <strong>type II error rate</strong> (<script type="math/tex">\beta</script>). One minus this probability gives the <strong>power</strong> of the test.</li>
+<li>The power function of a statistical test gives the probability of rejecting <script type="math/tex">H_0</script> as a function of the true parameter value:<script type="math/tex; mode=display">\pi(\theta)=\mathbb{P}(\mathrm{reject} H_0 \mid \theta)</script></li>
+<li>Note that if <script type="math/tex">\theta \in \Theta_0</script>, the parameter space of <script type="math/tex">H_0</script>, then <script type="math/tex">\pi(\theta)=\mathbb{P}(\mathrm{reject} H_0 \mid \theta)</script> gives the type I error rate.<br>If <script type="math/tex">H_0</script> is a composite hypothesis, then we define the <strong>size</strong> of the test as the <em>maximum</em> possible value of <script type="math/tex">\pi(\theta)</script> for all <script type="math/tex">\theta \in \Theta_0</script>.<br>A test has significance level <script type="math/tex">\alpha</script> if its size is at most <script type="math/tex">\alpha</script>. The significance level and size are equal in many cases.<br>The <strong>power</strong> of a test is the probability of <em>not</em> making a type II error.When <script type="math/tex">H_1</script> is composite, the power at <script type="math/tex">\theta = \theta_1</script> is simply <script type="math/tex">\pi(\theta_1)</script>.</li>
+<li>The <strong>p-value</strong> of a statistical test is the probability of observing a value of the test statistic at least as inconsistent as implied by <script type="math/tex">H_0</script>, if <script type="math/tex">H_0</script> is true. The test rejects <script type="math/tex">H_0</script> if the p-value is less than the significance level.</li>
+</ul>
+<p>General steps in hypothesis testing</p>
+<ol>
+<li>Formulate a statistical model (distribution if parametric).</li>
+<li>Specify the null and alternative hypotheses.</li>
+<li>Determine a test statistic <script type="math/tex">T</script>. It is typically one with a nice distribution under <script type="math/tex">H_0</script>, so that the significance level can be easily obtained.</li>
+<li>Determine the significance level <script type="math/tex">\alpha</script>.</li>
+<li>Collect data and calculate the test statistic. (Note: You <strong>must</strong> specify the significance level prior to data analysis — no cheating!)</li>
+<li>[<strong>Rejection region approach</strong>] Find the rejection region of <script type="math/tex">T</script> that corresponds to the selected <script type="math/tex">\alpha</script>.<br>[<strong>p-value approach</strong>] Calculate the p-value corresponding to the observed test statistic.</li>
+<li>If the observed test statistic is in the rejection region (or the p-value is less than <script type="math/tex">\alpha</script>), you reject <script type="math/tex">H_0</script> and accept <script type="math/tex">H_1</script>. Otherwise you do not reject <script type="math/tex">H_0</script>.</li>
+</ol>
+<h2 id="Duality-between-hypothesis-tests-and-confidence-intervals"><a href="#Duality-between-hypothesis-tests-and-confidence-intervals" class="headerlink" title="Duality between hypothesis tests and confidence intervals"></a>Duality between hypothesis tests and confidence intervals</h2><p><strong>The CI is the set of</strong> <script type="math/tex">\mu_0</script> <strong>under which</strong> <script type="math/tex">H_0</script> <strong>is not rejected</strong>.<br>Equivalently, if the hypothesized <script type="math/tex">\mu_0</script> is not sufficiently far away from <script type="math/tex">\bar{X}</script> in the sense that it lies in the CI, the test will not reject <script type="math/tex">H_0</script>.<br>This is known as the duality between hypothesis tests and CI’s.</p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>Notes for STAT_PROB_2024 Review Course on Probability and Statistics [2024]</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://shuqian8421.github.io/posts/41305/">https://shuqian8421.github.io/posts/41305/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>疏堑</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2024-08-28</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2026-02-28</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li><li class="reward-item"><a href="https://buymeacoffee.com/shuqian8421" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/BMACQRCode.png" alt="Buy Me a Coffee"/></a><div class="post-qr-code-desc">Buy Me a Coffee</div></li></ul></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Basic-Probability-Theory"><span class="toc-number">1.</span> <span class="toc-text">Basic Probability Theory</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-number">1.1.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sets-events-and-probability"><span class="toc-number">1.2.</span> <span class="toc-text">Sets, events and probability</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Sets-and-events"><span class="toc-number">1.2.1.</span> <span class="toc-text">Sets and events</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Probability-of-events"><span class="toc-number">1.2.2.</span> <span class="toc-text">Probability of events</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conditional-probability"><span class="toc-number">1.3.</span> <span class="toc-text">Conditional probability</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Probabilities-conditional-on-given-information"><span class="toc-number">1.3.1.</span> <span class="toc-text">Probabilities conditional on given information</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Calculating-conditional-probabilities"><span class="toc-number">1.3.2.</span> <span class="toc-text">Calculating conditional probabilities</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Independent-events"><span class="toc-number">1.3.3.</span> <span class="toc-text">Independent events</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bayes%E2%80%99-rule"><span class="toc-number">1.3.4.</span> <span class="toc-text">Bayes’ rule</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Random-variables-and-distributions"><span class="toc-number">1.4.</span> <span class="toc-text">Random variables and distributions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Random-variables"><span class="toc-number">1.4.1.</span> <span class="toc-text">Random variables</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#More-on-Distributions-and-Moments"><span class="toc-number">2.</span> <span class="toc-text">More on Distributions and Moments</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Bivariate-distributions"><span class="toc-number">2.1.</span> <span class="toc-text">Bivariate distributions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Expectations-and-moments"><span class="toc-number">2.2.</span> <span class="toc-text">Expectations and moments</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mathematical-expectations"><span class="toc-number">2.2.1.</span> <span class="toc-text">Mathematical expectations</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Some-common-distributions"><span class="toc-number">2.3.</span> <span class="toc-text">Some common distributions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Discrete-distribution-%E2%80%94-Uniform-a-b"><span class="toc-number">2.3.1.</span> <span class="toc-text">Discrete distribution — Uniform(a, b)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Discrete-distribution-%E2%80%94-Bernoulli-p"><span class="toc-number">2.3.2.</span> <span class="toc-text">Discrete distribution — Bernoulli(p)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Discrete-distribution-%E2%80%94-Binomial-n-p"><span class="toc-number">2.3.3.</span> <span class="toc-text">Discrete distribution — Binomial(n,p)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Discrete-distribution-%E2%80%94-Poisson-%CE%BB"><span class="toc-number">2.3.4.</span> <span class="toc-text">Discrete distribution — Poisson(λ)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Discrete-distribution-%E2%80%94-NegBin-r-p-amp-Geom-p"><span class="toc-number">2.3.5.</span> <span class="toc-text">Discrete distribution — NegBin(r, p) &amp; Geom(p)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Continuous-distribution-%E2%80%94-Uniform-a-b"><span class="toc-number">2.3.6.</span> <span class="toc-text">Continuous distribution — Uniform(a, b)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Continuous-distribution-%E2%80%94-Beta-%CE%B1-%CE%B2"><span class="toc-number">2.3.7.</span> <span class="toc-text">Continuous distribution — Beta(α, β)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Continuous-distribution-Gamma-%CE%B1-%CE%B2-amp-Exponential-%CE%B2"><span class="toc-number">2.3.8.</span> <span class="toc-text">Continuous distribution - Gamma(α, β) &amp; Exponential(β)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Continuous-distribution-Chi-squared-nu"><span class="toc-number">2.3.9.</span> <span class="toc-text">Continuous distribution - Chi-squared($\nu$)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Continuous-distribution-Normal-mu-sigma-2"><span class="toc-number">2.3.10.</span> <span class="toc-text">Continuous distribution - Normal($\mu$,$\sigma^2$)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Continuous-distribution-honourable-mention"><span class="toc-number">2.3.11.</span> <span class="toc-text">Continuous distribution - honourable mention</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sampling-and-Estimation"><span class="toc-number">3.</span> <span class="toc-text">Sampling and Estimation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Sampling-distributions"><span class="toc-number">3.1.</span> <span class="toc-text">Sampling distributions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sampling-distributions-for-the-normal-distribution"><span class="toc-number">3.2.</span> <span class="toc-text">Sampling distributions for the normal distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Large-sample-theory"><span class="toc-number">3.3.</span> <span class="toc-text">Large sample theory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Point-estimation-properties-of-estimators"><span class="toc-number">3.4.</span> <span class="toc-text">Point estimation - properties of estimators</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Point-estimation-methods"><span class="toc-number">3.5.</span> <span class="toc-text">Point estimation -methods</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Interval-estimation"><span class="toc-number">3.6.</span> <span class="toc-text">Interval estimation</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hypothesis-Testing"><span class="toc-number">4.</span> <span class="toc-text">Hypothesis Testing</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction-to-hypothesis-testing"><span class="toc-number">4.1.</span> <span class="toc-text">Introduction to hypothesis testing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Duality-between-hypothesis-tests-and-confidence-intervals"><span class="toc-number">4.2.</span> <span class="toc-text">Duality between hypothesis tests and confidence intervals</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By 疏堑</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://genuine-shortbread-148e4e.netlify.app/.netlify/functions/twikoo',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://genuine-shortbread-148e4e.netlify.app/.netlify/functions/twikoo',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo@1.7.0/dist/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="本博客框架为Hexo" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="本博客主题为Butterfly" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
