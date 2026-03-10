@@ -1,0 +1,18 @@
+/* 头图透明 */
+#page-header{
+    background: transparent!important;
+  }
+  
+  #page-header::before{
+    opacity: 0;
+  }
+  
+  /* footer透明 */
+  #footer{
+    background: transparent!important;
+  }
+  
+  #footer::before{
+    opacity: 0;
+  }
+  
